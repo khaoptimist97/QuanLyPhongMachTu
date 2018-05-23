@@ -1,0 +1,199 @@
+﻿@model MvcAppMain.Models.PhieuTiepNhan
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+
+
+    body {
+        margin: 0;
+        padding-top: 0vh;
+        padding-left: 0vh;
+        background: url("/Content/Image/BG-Recieve.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif;
+    }
+
+    .panel {
+        border: 1px solid #ffffff;
+        background: rgba(0,0,0,0.5);
+        padding: 10px 40px;
+        margin-top: 10vh;
+        box-shadow: 0px 3px 20px 6px rgba(0,0,0,0.75);
+        width: 80%;
+    }
+
+
+    h3 {
+        margin: 0;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        color: #fafc0d;
+    }
+
+
+
+    table {
+        text-align: center;
+    }
+
+    .col-md-3 {
+        color: white;
+    }
+
+    placeholder {
+        font-style: italic;
+        opacity: 0.9;
+    }
+</style>
+
+<body>
+    @using (Html.BeginForm("Create", "PhieuTiepNhans", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="row">
+                <div class="col-md-3 col-sm-2 col-xs-12"></div>
+                @*Modal Them Benh Nhan*@
+                <div class="modal fade" id="AddBNModal" style="color:black" tabindex="-1">
+                    <div class="modal-dialog modal-lg" style=" width: 900px !important;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <a href="#" class="close" data-dismiss="modal">&times;</a>
+                                <h4 id="ModalTitle" style="color:red">Thêm bệnh nhân mới </h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <form id="NewOrderForm">
+                                    <fieldset id="SubmitForm">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-2">
+                                                    Họ tên
+                                                </label>
+                                                <div class="col-md-4">
+                                                    <input type="text" id="TenBenhNhan" name="name" placeholder="Tên chủ xe" class="form-control" />
+                                                </div>
+                                                <label class="control-label col-md-2">
+                                                    Địa chỉ
+                                                </label>
+                                                <div class="col-md-4">
+                                                    <input type="text" id="DiaChi" name="date" placeholder="Địa chỉ" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-2">
+                                                    Ngày sinh
+                                                </label>
+                                                <div class="col-md-4">
+                                                    <input type="text" id="NgaySinh" name="name" placeholder="SĐT" class="form-control" />
+                                                </div>
+                                                <label class="control-label col-md-2">
+                                                    Giới tính
+                                                </label>
+                                                <div class="col-md-4">
+                                                    <input type="text" id="GioiTinh" name="name" placeholder="SĐT" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="reset" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <a id="saveBN" class="btn btn-danger" onclick="ConfirmSaveBN()">Save</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <div class="panel panel-default">
+                        <Center>
+                            <h3>Thêm Phiếu Tiếp Nhận</h3>
+                        </Center>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="form-horizontal" style="padding-left:30px; ">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ID_BenhNhan, "Bệnh nhân", htmlAttributes: new { @class = "control-label col-md-3" })
+                                        <div class="col-md-9 form-inline">
+                                            @Html.DropDownList("ID_BenhNhan", (SelectList)ViewBag.ID_BenhNhan, new { @class = "form-control", @id = "BenhNhan" })
+                                            @Html.ValidationMessageFor(model => model.ID_BenhNhan)
+                                            <a class="btn btn-default" href="#" style="width:90px" onclick="AddBenhNhan()">Add new</a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.NgayTiepNhan, "Ngày", htmlAttributes: new { @class = "control-label col-md-3" })
+                                        <div class="col-md-9">
+                                            @Html.TextBoxFor(model => model.NgayTiepNhan, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.NgayTiepNhan)
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-offset-3 col-md-10">
+                                        <a href="@Url.Action("Index", "PhieuTiepNhans")" style="padding-right:20px;" class="btn btn-danger">
+                                            Quay lại
+                                        </a>
+                                        <input type="submit" value="Xác nhận" class="btn btn-success" />
+
+                                    </div>
+                                    <a href="@Url.Action("Index", "PhieuTiepNhans")" style="padding-right:20px;color:red" class="col-md-offset-3">@ViewBag.Error</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+
+@section scripts
+{
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+}
+<script type="text/javascript">
+    $(function () {
+        $("#NgayTiepNhan").datepicker({ dateFormat: 'mm/dd/yy' });
+        $("#NgaySinh").datepicker({ dateFormat: 'mm/dd/yy' });
+    });
+    function AddBenhNhan() {
+        $("#AddBNModal").modal('show');
+    }
+    function ConfirmSaveBN() {
+        var TenBenhNhan = $("#TenBenhNhan").val();
+        var DiaChi = $("#DiaChi").val();
+        var GioiTinh = $("#GioiTinh").val();
+        var NgaySinh = $("#NgaySinh").val();
+        $.ajax({
+            type: "GET",
+            data: {
+                TenBenhNhan: TenBenhNhan,
+                GioiTinh: GioiTinh,
+                NgaySinh: NgaySinh,
+                DiaChi: DiaChi
+            },
+            url: "/PhieuTiepNhans/ConfirmThemMoiXe",
+            success: function (result) {
+                $('#BenhNhan option:selected').text(TenBenhNhan);
+                $('#BenhNhan option:selected').val(result);
+                $("#AddBNModal").modal('hide');
+            }
+        })
+    }
+</script>

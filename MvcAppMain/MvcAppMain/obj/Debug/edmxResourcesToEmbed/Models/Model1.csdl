@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLPhongMachTuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BK_HoaDon">
+    <Key>
+      <PropertyRef Name="ID_HoaDon" />
+      <PropertyRef Name="ID_PhieuKham" />
+    </Key>
+    <Property Name="ID_HoaDon" Type="Int32" Nullable="false" />
+    <Property Name="ID_PhieuKham" Type="Int32" Nullable="false" />
+    <Property Name="TienKham" Type="Int32" />
+    <Property Name="TienThuoc" Type="Int32" />
+    <Property Name="DoanhThu" Type="Int32" />
+    <Property Name="GhiChu" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="ID_HoaDon" />
+      <PropertyRef Name="ID_PhieuKham" />
+    </Key>
+    <Property Name="ID_HoaDon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PhieuKham" Type="Int32" Nullable="false" />
+    <Property Name="TienKham" Type="Int32" />
+    <Property Name="TienThuoc" Type="Int32" />
+    <Property Name="DoanhThu" Type="Int32" />
+    <Property Name="GhiChu" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="QLPhongMachTuEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BK_HoaDon" EntityType="Self.BK_HoaDon" />
+    <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
+    <FunctionImport Name="SP_BKHoaDon" />
+  </EntityContainer>
+</Schema>

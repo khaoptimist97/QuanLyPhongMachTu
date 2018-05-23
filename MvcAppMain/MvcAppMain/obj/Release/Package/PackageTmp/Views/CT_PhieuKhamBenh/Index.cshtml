@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MvcAppMain.Models.CT_PhieuKhamBenh>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_PhieuKham)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CachDung.TenCachDung)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhieuKhamBenh.TrieuChung)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Thuoc.TenThuoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Thuoc.ID_DonVi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuongThuocLay)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_PhieuKham)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CachDung.TenCachDung)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhieuKhamBenh.TrieuChung)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Thuoc.TenThuoc)
+        </td>
+        <th>
+            @Html.DisplayFor(modelItem => item.Thuoc.ID_DonVi)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongThuocLay)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = Convert.ToInt32(Session["ID_PhieuKham"]) }) |
+            @Html.ActionLink("Create", "Create", new { id = Convert.ToInt32(Session["ID_PhieuKham"]) }) |
+            @Html.ActionLink("Details", "Details", new { id = Convert.ToInt32(Session["ID_PhieuKham"]) }) |
+            @Html.ActionLink("Delete", "Delete", new { id = Convert.ToInt32(Session["ID_PhieuKham"]) })
+        </td>
+    </tr>
+
+}
+
+</table>
+<a href="/HoaDon/Index">Xem hoa don</a >

@@ -1,0 +1,123 @@
+﻿@model MvcAppMain.Models.PhieuTiepNhan
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+@section scripts
+{
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+}
+<script type="text/javascript">
+    $(function () {
+        $("#NgayTiepNhan").datepicker({ dateFormat: 'mm/dd/yy' });
+    });
+</script>
+
+<style>
+
+
+    body {
+        margin: 0;
+        padding-top: 0vh;
+        padding-left: 0vh;
+        background: url("/Content/Image/BG-Recieve.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif
+    }
+
+    .panel {
+        border: 1px solid #ffffff;
+        background: rgba(0,0,0,0.5);
+        padding: 10px 40px;
+        margin-top: 10vh;
+        box-shadow: 0px 3px 20px 6px rgba(0,0,0,0.75);
+        width: 80%;
+    }
+
+
+    h3 {
+        margin: 0;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        color: #fafc0d;
+    }
+
+    table {
+        text-align: center;
+    }
+
+    .col-md-3 {
+        color: white;
+    }
+</style>
+
+<body>
+    @using (Html.BeginForm("Edit", "PhieuTiepNhans", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.IDPhieuTN)
+            <div class="row">
+                <div class="col-md-3 col-sm-2 col-xs-12"></div>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <div class="panel panel-default">
+                        <Center>
+                            <h3>Sửa Phiếu Tiếp Nhận</h3>
+                        </Center>
+                        <div class="panel-body" style="padding-left:40px;">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ID_BenhNhan, "Bệnh nhân", htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-9">
+                                    <input type="hidden" value="@Model.ID_BenhNhan" id="IDBenhNhan" />
+                                    @Html.DropDownList("ID_BenhNhan", (SelectList)ViewBag.ID_BenhNhan, Model.HoSoBenhNhan.HoTen, new { @class = "form-control", id = "dropDown" })
+                                    @Html.ValidationMessageFor(model => model.ID_BenhNhan)
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.NgayTiepNhan, "Ngày Nhận", htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-9">
+                                    @Html.TextBoxFor(model => model.NgayTiepNhan, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.NgayTiepNhan)
+                                </div>
+                            </div>
+
+                            <div class="col-md-offset-3 col-md-10">
+                                <a href="@Url.Action("Index", "PhieuTiepNhans")" style="padding-right:20px;" class="btn btn-danger">
+                                    Quay lại
+                                </a>
+                                <input type="submit" value="Xác nhận" class="btn btn-success" onclick="GanIDBienSo()" />
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+<script>
+    function GanIDBienSo() {
+        var IDBenhNhan = $("#IDBenhNhan").val();
+        $("#dropDown option:selected").val(IDBenhNhan);
+    }
+
+    $('#NgayTiepNhan').on('keypress', function (event) {
+        var regex = new RegExp("^[a-zA-Z0-9]+$");
+        var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+        if (!regex.test(key)) {
+            event.preventDefault();
+            return false;
+        }
+    });
+</script>

@@ -1,0 +1,593 @@
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ApplicationInsights.config
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\MvcAppMain.dll.config
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\MvcAppMain.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\MvcAppMain.pdb
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\csc.exe
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\csc.exe.config
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\csc.rsp
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\csi.exe
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\csi.exe.config
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\csi.rsp
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.Win32.Primitives.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.AppContext.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Collections.Immutable.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Console.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Diagnostics.Process.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Diagnostics.StackTrace.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.IO.Compression.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.IO.FileSystem.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.IO.FileSystem.Primitives.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.IO.Pipes.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Reflection.Metadata.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.AccessControl.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.Claims.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.Cryptography.Encoding.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.Cryptography.Primitives.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.Principal.Windows.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Text.Encoding.CodePages.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Threading.Thread.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.ValueTuple.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Xml.ReaderWriter.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Xml.XmlDocument.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Xml.XPath.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\System.Xml.XPath.XDocument.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\vbc.exe
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\vbc.exe.config
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\vbc.rsp
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\VBCSCompiler.exe
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\roslyn\VBCSCompiler.exe.config
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Antlr3.Runtime.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\EntityFramework.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\EntityFramework.SqlServer.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.AI.Agent.Intercept.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.AI.DependencyCollector.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.AI.Web.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.AI.WindowsServer.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.ApplicationInsights.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.Web.Infrastructure.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Newtonsoft.Json.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\System.Web.Helpers.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\System.Web.Mvc.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\System.Web.Optimization.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\System.Web.Razor.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\System.Web.WebPages.Deployment.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\System.Web.WebPages.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\System.Web.WebPages.Razor.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\WebGrease.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\EntityFramework.xml
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\EntityFramework.SqlServer.xml
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\System.Web.Helpers.xml
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\System.Web.Mvc.xml
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\System.Web.Optimization.xml
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\System.Web.Razor.xml
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\System.Web.WebPages.xml
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\System.Web.WebPages.Deployment.xml
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\System.Web.WebPages.Razor.xml
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Antlr3.Runtime.pdb
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Newtonsoft.Json.xml
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.AI.DependencyCollector.xml
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.AI.WindowsServer.xml
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.AI.Web.xml
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.csprojResolveAssemblyReference.cache
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.csproj.CoreCompileInputs.cache
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.csproj.CopyComplete
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.pdb
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.ApplicationInsights.TraceListener.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\System.Diagnostics.DiagnosticSource.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\System.Diagnostics.DiagnosticSource.xml
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\SqlServerTypes\x64\msvcr120.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\SqlServerTypes\x86\msvcr120.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.SqlServer.Types.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\stdole.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\CrystalDecisions.CrystalReports.Engine.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportSource.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\CrystalDecisions.Shared.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ApplicationInsights.config
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\SqlServerTypes\x64\msvcr120.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\SqlServerTypes\x86\msvcr120.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\MvcAppMain.dll.config
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\MvcAppMain.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\MvcAppMain.pdb
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\csc.exe
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\csc.exe.config
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\csc.rsp
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\csi.exe
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\csi.exe.config
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\csi.rsp
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.Win32.Primitives.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.AppContext.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Collections.Immutable.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Console.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Diagnostics.Process.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Diagnostics.StackTrace.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.IO.Compression.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.IO.FileSystem.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.IO.FileSystem.Primitives.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.IO.Pipes.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Reflection.Metadata.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.AccessControl.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.Claims.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.Cryptography.Encoding.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.Cryptography.Primitives.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.Principal.Windows.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Text.Encoding.CodePages.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Threading.Thread.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.ValueTuple.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Xml.ReaderWriter.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Xml.XmlDocument.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Xml.XPath.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Xml.XPath.XDocument.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\vbc.exe
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\vbc.exe.config
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\vbc.rsp
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\VBCSCompiler.exe
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\roslyn\VBCSCompiler.exe.config
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Antlr3.Runtime.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.CrystalReports.Engine.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportSource.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.Shared.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\EntityFramework.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\EntityFramework.SqlServer.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.AI.Agent.Intercept.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.AI.DependencyCollector.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.AI.Web.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.AI.WindowsServer.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.ApplicationInsights.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.ApplicationInsights.TraceListener.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.Common.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.DataVisualization.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.Design.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.WebDesign.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.WebForms.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.WinForms.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.SqlServer.Types.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.Web.Infrastructure.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Newtonsoft.Json.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ReportViewerForMvc.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\System.Diagnostics.DiagnosticSource.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\System.Web.Helpers.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\System.Web.Mvc.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\System.Web.Optimization.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\System.Web.Razor.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\System.Web.WebPages.Deployment.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\System.Web.WebPages.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\System.Web.WebPages.Razor.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\WebGrease.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\EnvDTE.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.VisualStudio.Shell.Interop.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\stdole.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.VisualStudio.OLE.Interop.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.VisualStudio.TextManager.Interop.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.MSXML.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\EntityFramework.xml
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\EntityFramework.SqlServer.xml
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.AI.DependencyCollector.xml
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.AI.Web.xml
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.AI.WindowsServer.xml
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\System.Diagnostics.DiagnosticSource.xml
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\System.Web.Helpers.xml
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\System.Web.Mvc.xml
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\System.Web.Razor.xml
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\System.Web.WebPages.xml
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\System.Web.WebPages.Deployment.xml
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\System.Web.WebPages.Razor.xml
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\System.Web.Optimization.xml
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Antlr3.Runtime.pdb
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\Newtonsoft.Json.xml
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\de\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\es\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\fr\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\it\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ja\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ko\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\pt\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ru\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\de\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\es\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\fr\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\it\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ja\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ko\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\pt\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ru\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\de\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\es\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\it\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\de\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\es\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\fr\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\it\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ja\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ko\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\pt\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\de\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\es\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\fr\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\it\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ja\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ko\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\pt\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.csprojResolveAssemblyReference.cache
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.csproj.CoreCompileInputs.cache
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.csproj.CopyComplete
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.dll
+F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.pdb
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.Common.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.DataVisualization.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.Design.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.WebDesign.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.WebForms.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.WinForms.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ReportViewerForMvc.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\EnvDTE.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.VisualStudio.Shell.Interop.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.VisualStudio.OLE.Interop.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.VisualStudio.TextManager.Interop.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\Microsoft.MSXML.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\de\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\es\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\fr\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\it\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ja\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ko\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\pt\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ru\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\de\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\es\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\fr\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\it\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ja\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ko\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\pt\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ru\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\de\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\es\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\it\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\de\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\es\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\fr\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\it\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ja\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ko\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\pt\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\de\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\es\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\fr\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\it\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ja\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ko\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\pt\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+F:\CNPM nâng cao\MvcAppMain\MvcAppMain\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ApplicationInsights.config
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\SqlServerTypes\x64\msvcr120.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\SqlServerTypes\x86\msvcr120.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\MvcAppMain.dll.config
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\MvcAppMain.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\MvcAppMain.pdb
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\csc.exe
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\csc.exe.config
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\csc.rsp
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\csi.exe
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\csi.exe.config
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\csi.rsp
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.AppContext.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Console.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.IO.Compression.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.Claims.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Threading.Thread.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.ValueTuple.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\vbc.exe
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\vbc.exe.config
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\vbc.rsp
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\VBCSCompiler.exe
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Antlr3.Runtime.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportSource.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.Shared.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\EntityFramework.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\EntityFramework.SqlServer.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.AI.Web.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.ApplicationInsights.TraceListener.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.Design.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.WebDesign.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.SqlServer.Types.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Newtonsoft.Json.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ReportViewerForMvc.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\System.Web.Helpers.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\System.Web.Mvc.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\System.Web.Optimization.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\System.Web.Razor.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\System.Web.WebPages.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\System.Web.WebPages.Razor.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\WebGrease.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\EnvDTE.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\stdole.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.MSXML.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\EntityFramework.xml
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\EntityFramework.SqlServer.xml
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.AI.Web.xml
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\System.Web.Helpers.xml
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\System.Web.Mvc.xml
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\System.Web.Razor.xml
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\System.Web.WebPages.xml
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\System.Web.WebPages.Razor.xml
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\System.Web.Optimization.xml
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Antlr3.Runtime.pdb
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Newtonsoft.Json.xml
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\de\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\es\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\it\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\de\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\es\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\fr\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\it\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ja\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ko\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\pt\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.csproj.CoreCompileInputs.cache
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.csproj.CopyComplete
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.pdb
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\PagedList.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\PagedList.Mvc.dll
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\PagedList.xml
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\PagedList.Mvc.xml
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.Migrations.UpdateDatabase.resources
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.csproj.GenerateResource.cache
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.Migrations.QlphongmachV1.resources
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.csprojResolveAssemblyReference.cache
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.Migrations.UpdateChiTietPhieuKham.resources
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.Migrations.UpdatePhieuKhamBenh.resources
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.Migrations.UpdateCachDung.resources
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.Migrations.UpdateCT.resources

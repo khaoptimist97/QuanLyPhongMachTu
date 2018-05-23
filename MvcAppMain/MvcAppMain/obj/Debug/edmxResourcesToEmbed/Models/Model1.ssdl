@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLPhongMachTuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BK_HoaDon">
+    <Key>
+      <PropertyRef Name="ID_HoaDon" />
+      <PropertyRef Name="ID_PhieuKham" />
+    </Key>
+    <Property Name="ID_HoaDon" Type="int" Nullable="false" />
+    <Property Name="ID_PhieuKham" Type="int" Nullable="false" />
+    <Property Name="TienKham" Type="int" />
+    <Property Name="TienThuoc" Type="int" />
+    <Property Name="DoanhThu" Type="int" />
+    <Property Name="GhiChu" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="ID_HoaDon" />
+      <PropertyRef Name="ID_PhieuKham" />
+    </Key>
+    <Property Name="ID_HoaDon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PhieuKham" Type="int" Nullable="false" />
+    <Property Name="TienKham" Type="int" />
+    <Property Name="TienThuoc" Type="int" />
+    <Property Name="DoanhThu" Type="int" />
+    <Property Name="GhiChu" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <Function Name="SP_BKHoaDon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="QLPhongMachTuModelStoreContainer">
+    <EntitySet Name="BK_HoaDon" EntityType="Self.BK_HoaDon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

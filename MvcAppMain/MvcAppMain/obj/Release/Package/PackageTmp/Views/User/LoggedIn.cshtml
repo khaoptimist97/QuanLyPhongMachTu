@@ -1,0 +1,19 @@
+﻿@model IEnumerable<MvcAppMain.Models.User>
+@{
+    ViewBag.Title = "LoggedIn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<fieldset>
+    <legend>
+        
+            @if (Session["Username"] != null) {
+                <text>
+                    Welcome! @Session["Username"].ToString()
+                </text>
+            }
+        
+    </legend>
+
+</fieldset>
+<a href="/User/Logout">Logout</a>

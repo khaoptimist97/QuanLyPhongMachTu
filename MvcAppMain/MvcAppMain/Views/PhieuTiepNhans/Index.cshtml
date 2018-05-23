@@ -1,0 +1,239 @@
+﻿@model PagedList.IPagedList<MvcAppMain.Models.PhieuTiepNhan>
+@using PagedList;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-1.12.4.min.js"></script>
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-ui.js"></script>
+
+<style>
+
+
+    body {
+        color: white;
+        background: url("/Content/Image/BG-Recieve.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif
+    }
+
+    .panel {
+        border: 1px solid #ffffff;
+        background: rgba(0,0,0,0.5);
+        padding: 10px 40px;
+        margin-top: 5vh;
+        box-shadow: 0px 3px 20px 6px rgba(0,0,0,0.75);
+        width: 99%;
+    }
+
+
+    h3 {
+        margin: 0;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        color: #fafc0d;
+    }
+
+    table {
+        text-align: center;
+    }
+
+    placeholder {
+        font-style: italic;
+    }
+</style>
+<body>
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-md-1 col-sm-2 col-xs-12"> </div>
+
+            <div class="col-md-11 col-sm-9 col-xs-12">
+                <div class="panel panel-default">
+
+                    <h1 style="font-family:'Myriad Pro'; text-align:center;color: #fafc0d;">DANH SÁCH PHIẾU TIẾP NHẬN</h1>
+                    <br /><br /><br />
+                    @using (Html.BeginForm("Index", "PhieuTiepNhans", FormMethod.Get))
+                    {
+                        <div class="form-inline my-2 my-lg-0">
+                            <label>Tìm theo tên: </label>
+                            @Html.TextBox("searchString", ViewBag.CurrentFilter as string, htmlAttributes: new { @class = "form-control mr-sm-2", @placeholder = "Nhập tên bệnh nhân", id = "searchString" })
+                            <input class="btn btn-primary my-2 my-sm-0" type="submit" value="Tìm Kiếm" />
+                            <a href="@Url.Action("Create","PhieuTiepNhans")" style="padding-left:10px;" class="btn btn-success col-md-offset-4">
+                                Phiếu Mới
+                            </a>
+                            @*<a href="#" class="btn btn-danger" style="" id="suaButton">Sửa chữa</a>*@
+                        </div>
+                    }
+                    <br />
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div>
+                                        <table class="table  table-bordered ">
+                                            <tr>
+                                                <th>
+                                                    <Center>Tên Bệnh nhân</Center>
+                                                </th>
+                                                <th>
+                                                    <Center>Ngày Tiếp Nhận</Center>
+                                                </th>
+                                                <th></th>
+                                            </tr>
+                                            @if (Model.Count() == 0)
+                                            {
+                                                <tr>
+                                                    <td colspan="3"> Records not found </td>
+                                                </tr>
+                                            }
+                                            else
+                                            {
+                                                foreach (var item in Model)
+                                                {
+                                                    <tr class="row_@item.IDPhieuTN">
+                                                        @Html.HiddenFor(m => item.IDPhieuTN, new { @id = "PhieuID" })
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.HoSoBenhNhan.HoTen)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.NgayTiepNhan)
+                                                        </td>
+                                                        <td>
+                                                            <a href="@Url.Action("Details","PhieuTiepNhans",new { id = item.IDPhieuTN })" class="btn btn-primary glyphicon glyphicon-info-sign">
+                                                            </a>
+                                                            <a href="@Url.Action("Edit", "PhieuTiepNhans", new { id = item.IDPhieuTN })" class="btn btn-warning ">
+                                                                Sửa
+                                                            </a>
+
+                                                            <a href="#" class="btn btn-danger" onclick="DeleteRecord('@item.IDPhieuTN')">Xóa</a>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { currentFilter = ViewBag.CurrentFilter, page }))
+                </div>
+            </div>
+        </div>
+    </div>
+    @*Desing Bootdtrap Modal For Delete*@
+    <div class="modal fade" id="DeleteConfirmation" style="color:black">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">&times;</a>
+                    <h4>Xóa Phiếu tiếp nhận </h4>
+                </div>
+                <div class="modal-body">
+                    <h4>Bạn chắc chứ? Bạn muốn xóa Phiếu tiếp nhận này không?</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-primary" data-dismiss="modal">Cancle</button>
+                    <button type="submit" class="btn btn-danger" onclick="ConfirmDelete()">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $("#searchString").autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: '@Url.Action("GetSearchValue","PhieuTiepNhans")',
+                dataType: "json",
+                data: { search: $("#searchString").val() },
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return { label: item.TenBenhNhan, value: item.TenBenhNhan };
+                    }));
+                },
+                error: function (xhr, status, error) {
+                    alert("Error");
+                }
+            });
+        }
+    });
+
+    $('#searchString').on('keypress', function (event) {
+        var regex = new RegExp("^[a-zA-Z0-9\\s]+$");
+        var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+        if (!regex.test(key)) {
+            event.preventDefault();
+            return false;
+        }
+    });
+    function DeleteRecord(IDPhieu) {
+        $("#PhieuID").val(IDPhieu);
+        $("#DeleteConfirmation").modal("show");
+    }
+    function ConfirmDelete() {
+        var IDPhieu = $("#PhieuID").val();
+        $.ajax({
+            type: "POST",
+            data: { IDPhieu: IDPhieu },
+            url: "/PhieuTiepNhans/DeleteConfirmation",
+            success: function (result) {
+                $("#DeleteConfirmation").modal("hide");
+                $(".row_" + IDPhieu).remove();
+            }
+        })
+    }
+</script>
+@*@model IEnumerable<MvcAppMain.Models.PhieuTiepNhan>
+
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HoSoBenhNhan.HoTen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayTiepNhan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deleted)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoSoBenhNhan.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayTiepNhan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deleted)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.IDPhieuTN }) |
+                @Html.ActionLink("Details", "Details", new { id=item.IDPhieuTN }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.IDPhieuTN })
+            </td>
+        </tr>
+    }
+
+    </table>*@

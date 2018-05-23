@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MvcAppMain.Models.HoaDon>
+
+
+@{
+    ViewBag.Title = "BaoCaoDoanhThu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>BaoCaoDoanhThu</h2>
+
+<p>
+    @*<a class="btn btn-success" href="@Url.Action("Export","HoaDon")">Download Report</a>*@
+   
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PhieuKhamBenh.NgayKham)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhieuKhamBenh.ID_BenhNhan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoanhThu)
+        </th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhieuKhamBenh.NgayKham)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhieuKhamBenh.ID_BenhNhan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoanhThu)
+            </td>
+
+
+        </tr>
+    }
+
+</table>

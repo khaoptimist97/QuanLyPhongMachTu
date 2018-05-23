@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MvcAppMain.Models.PhieuKhamBenh>
+
+@{
+    ViewBag.Title = "DanhSachBenhNhan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DanhSachBenhNhan</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm()) {
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HoSoBenhNhan.HoTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayKham)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Benh.TenBenh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrieuChung)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoSoBenhNhan.HoTen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayKham)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Benh.TenBenh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrieuChung)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID_PhieuKham }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID_PhieuKham }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID_PhieuKham })
+        </td>
+    </tr>
+}
+
+</table>

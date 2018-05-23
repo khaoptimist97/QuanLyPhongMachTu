@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="QuanLyPMT-2018" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^F:\\CNPM\ nâng\ cao\\MvcAppMain\\MvcAppMain\\obj\\Debug\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^F:\\CNPM\ nâng\ cao\\MvcAppMain\\MvcAppMain\\obj\\Debug\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="QLPhongMachTuConnectionString-Web.config Connection String" description="" value="Data Source=qlpmt.database.windows.net;Initial Catalog=QLPhongMachTu;Persist Security Info=True;User ID=QuocBao;Password=[sasuke3061997]" tags="">
+    <parameterEntry kind="XmlFile" scope="F:\\CNPM\ nâng\ cao\\MvcAppMain\\MvcAppMain\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='QLPhongMachTuConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="QLPMContext-Web.config Connection String" description="" value="Data Source=tcp:qlpmt.database.windows.net,1433;Initial Catalog=QLPhongMachTu;User Id=QuocBao@qlpmt.database.windows.net;Password=[sasuke3061997];" tags="">
+    <parameterEntry kind="XmlFile" scope="F:\\CNPM\ nâng\ cao\\MvcAppMain\\MvcAppMain\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='QLPMContext']/@connectionString" />
+  </parameter>
+</parameters>

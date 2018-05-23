@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MvcAppMain.Models.CT_PhieuKhamBenh>
+
+@{
+    ViewBag.Title = "BaoCaoSuDungThuoc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>BaoCaoSuDungThuoc</h2>
+
+<p>
+    <a class="btn btn-success" href="@Url.Action("Export","CT_PhieuKhamBenh")">Download Report</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PhieuKhamBenh.NgayKham)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Thuoc.TenThuoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Thuoc.ID_DonVi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Thuoc.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CachDung.SoLanDung)
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhieuKhamBenh.NgayKham)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Thuoc.TenThuoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Thuoc.ID_DonVi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Thuoc.SoLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CachDung.SoLanDung)
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,51 @@
+﻿@model MvcAppMain.Models.CT_PhieuKhamBenh
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CT_PhieuKhamBenh</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CachDung.TenCachDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CachDung.TenCachDung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhieuKhamBenh.TrieuChung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhieuKhamBenh.TrieuChung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Thuoc.TenThuoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Thuoc.TenThuoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuongThuocLay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongThuocLay)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

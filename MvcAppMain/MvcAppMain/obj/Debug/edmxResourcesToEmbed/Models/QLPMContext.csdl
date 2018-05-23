@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLPhongMachTuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Benh">
+    <Key>
+      <PropertyRef Name="ID_Benh" />
+    </Key>
+    <Property Name="ID_Benh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenBenh" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PhieuKhamBenhs" Relationship="Self.FK_Benh" FromRole="Benh" ToRole="PhieuKhamBenh" />
+  </EntityType>
+  <EntityType Name="CachDung">
+    <Key>
+      <PropertyRef Name="ID_CachDung" />
+    </Key>
+    <Property Name="ID_CachDung" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenCachDung" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="SoLanDung" Type="Int32" />
+    <NavigationProperty Name="CT_PhieuKhamBenh" Relationship="Self.FK_CachDung" FromRole="CachDung" ToRole="CT_PhieuKhamBenh" />
+  </EntityType>
+  <EntityType Name="CT_PhieuKhamBenh">
+    <Key>
+      <PropertyRef Name="ID_PhieuKham" />
+      <PropertyRef Name="ID_Thuoc" />
+    </Key>
+    <Property Name="ID_PhieuKham" Type="Int32" Nullable="false" />
+    <Property Name="ID_Thuoc" Type="Int32" Nullable="false" />
+    <Property Name="ID_CachDung" Type="Int32" Nullable="false" />
+    <Property Name="SoLuongThuocLay" Type="Int32" />
+    <NavigationProperty Name="CachDung" Relationship="Self.FK_CachDung" FromRole="CT_PhieuKhamBenh" ToRole="CachDung" />
+    <NavigationProperty Name="PhieuKhamBenh" Relationship="Self.FK_PhieuKham" FromRole="CT_PhieuKhamBenh" ToRole="PhieuKhamBenh" />
+    <NavigationProperty Name="Thuoc" Relationship="Self.FK_Thuoc" FromRole="CT_PhieuKhamBenh" ToRole="Thuoc" />
+  </EntityType>
+  <EntityType Name="DonVi">
+    <Key>
+      <PropertyRef Name="ID_DonVi" />
+    </Key>
+    <Property Name="ID_DonVi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenDonVi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Thuocs" Relationship="Self.FK_DonVi" FromRole="DonVi" ToRole="Thuoc" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="ID_HoaDon" />
+      <PropertyRef Name="ID_PhieuKham" />
+    </Key>
+    <Property Name="ID_HoaDon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PhieuKham" Type="Int32" Nullable="false" />
+    <Property Name="TienKham" Type="Int32" />
+    <Property Name="TienThuoc" Type="Int32" />
+    <Property Name="DoanhThu" Type="Int32" />
+    <Property Name="GhiChu" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PhieuKhamBenh" Relationship="Self.FK_PhieuKham_HoaDon" FromRole="HoaDon" ToRole="PhieuKhamBenh" />
+  </EntityType>
+  <EntityType Name="HoSoBenhNhan">
+    <Key>
+      <PropertyRef Name="ID_BenhNhan" />
+    </Key>
+    <Property Name="ID_BenhNhan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HoTen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="GioiTinh" Type="Boolean" />
+    <Property Name="NamSinh" Type="DateTime" Precision="0" />
+    <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PhieuKhamBenhs" Relationship="Self.FK_BenhNhan" FromRole="HoSoBenhNhan" ToRole="PhieuKhamBenh" />
+  </EntityType>
+  <EntityType Name="PhieuKhamBenh">
+    <Key>
+      <PropertyRef Name="ID_PhieuKham" />
+    </Key>
+    <Property Name="ID_PhieuKham" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_BenhNhan" Type="Int32" Nullable="false" />
+    <Property Name="ID_Benh" Type="Int32" Nullable="false" />
+    <Property Name="NgayKham" Type="DateTime" Precision="0" />
+    <Property Name="TrieuChung" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Benh" Relationship="Self.FK_Benh" FromRole="PhieuKhamBenh" ToRole="Benh" />
+    <NavigationProperty Name="CT_PhieuKhamBenh" Relationship="Self.FK_PhieuKham" FromRole="PhieuKhamBenh" ToRole="CT_PhieuKhamBenh" />
+    <NavigationProperty Name="HoaDons" Relationship="Self.FK_PhieuKham_HoaDon" FromRole="PhieuKhamBenh" ToRole="HoaDon" />
+    <NavigationProperty Name="HoSoBenhNhan" Relationship="Self.FK_BenhNhan" FromRole="PhieuKhamBenh" ToRole="HoSoBenhNhan" />
+  </EntityType>
+  <EntityType Name="ThamSo">
+    <Key>
+      <PropertyRef Name="ID_ThamSo" />
+    </Key>
+    <Property Name="ID_ThamSo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GiaTri" Type="Int32" />
+    <Property Name="GhiChu" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Thuoc">
+    <Key>
+      <PropertyRef Name="ID_Thuoc" />
+    </Key>
+    <Property Name="ID_Thuoc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_DonVi" Type="Int32" Nullable="false" />
+    <Property Name="TenThuoc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="DonGia" Type="Int32" />
+    <NavigationProperty Name="CT_PhieuKhamBenh" Relationship="Self.FK_Thuoc" FromRole="Thuoc" ToRole="CT_PhieuKhamBenh" />
+    <NavigationProperty Name="DonVi" Relationship="Self.FK_DonVi" FromRole="Thuoc" ToRole="DonVi" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID_User" />
+    </Key>
+    <Property Name="ID_User" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Roles" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Benh">
+    <End Role="Benh" Type="Self.Benh" Multiplicity="1" />
+    <End Role="PhieuKhamBenh" Type="Self.PhieuKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Benh">
+        <PropertyRef Name="ID_Benh" />
+      </Principal>
+      <Dependent Role="PhieuKhamBenh">
+        <PropertyRef Name="ID_Benh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CachDung">
+    <End Role="CachDung" Type="Self.CachDung" Multiplicity="1" />
+    <End Role="CT_PhieuKhamBenh" Type="Self.CT_PhieuKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CachDung">
+        <PropertyRef Name="ID_CachDung" />
+      </Principal>
+      <Dependent Role="CT_PhieuKhamBenh">
+        <PropertyRef Name="ID_CachDung" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuKham">
+    <End Role="PhieuKhamBenh" Type="Self.PhieuKhamBenh" Multiplicity="1" />
+    <End Role="CT_PhieuKhamBenh" Type="Self.CT_PhieuKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhieuKhamBenh">
+        <PropertyRef Name="ID_PhieuKham" />
+      </Principal>
+      <Dependent Role="CT_PhieuKhamBenh">
+        <PropertyRef Name="ID_PhieuKham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Thuoc">
+    <End Role="Thuoc" Type="Self.Thuoc" Multiplicity="1" />
+    <End Role="CT_PhieuKhamBenh" Type="Self.CT_PhieuKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Thuoc">
+        <PropertyRef Name="ID_Thuoc" />
+      </Principal>
+      <Dependent Role="CT_PhieuKhamBenh">
+        <PropertyRef Name="ID_Thuoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonVi">
+    <End Role="DonVi" Type="Self.DonVi" Multiplicity="1" />
+    <End Role="Thuoc" Type="Self.Thuoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonVi">
+        <PropertyRef Name="ID_DonVi" />
+      </Principal>
+      <Dependent Role="Thuoc">
+        <PropertyRef Name="ID_DonVi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuKham_HoaDon">
+    <End Role="PhieuKhamBenh" Type="Self.PhieuKhamBenh" Multiplicity="1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhieuKhamBenh">
+        <PropertyRef Name="ID_PhieuKham" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="ID_PhieuKham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BenhNhan">
+    <End Role="HoSoBenhNhan" Type="Self.HoSoBenhNhan" Multiplicity="1" />
+    <End Role="PhieuKhamBenh" Type="Self.PhieuKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoSoBenhNhan">
+        <PropertyRef Name="ID_BenhNhan" />
+      </Principal>
+      <Dependent Role="PhieuKhamBenh">
+        <PropertyRef Name="ID_BenhNhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLPhongMachTuEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Benhs" EntityType="Self.Benh" />
+    <EntitySet Name="CachDungs" EntityType="Self.CachDung" />
+    <EntitySet Name="CT_PhieuKhamBenh" EntityType="Self.CT_PhieuKhamBenh" />
+    <EntitySet Name="DonVis" EntityType="Self.DonVi" />
+    <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
+    <EntitySet Name="HoSoBenhNhans" EntityType="Self.HoSoBenhNhan" />
+    <EntitySet Name="PhieuKhamBenhs" EntityType="Self.PhieuKhamBenh" />
+    <EntitySet Name="ThamSoes" EntityType="Self.ThamSo" />
+    <EntitySet Name="Thuocs" EntityType="Self.Thuoc" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_Benh" Association="Self.FK_Benh">
+      <End Role="Benh" EntitySet="Benhs" />
+      <End Role="PhieuKhamBenh" EntitySet="PhieuKhamBenhs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CachDung" Association="Self.FK_CachDung">
+      <End Role="CachDung" EntitySet="CachDungs" />
+      <End Role="CT_PhieuKhamBenh" EntitySet="CT_PhieuKhamBenh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuKham" Association="Self.FK_PhieuKham">
+      <End Role="PhieuKhamBenh" EntitySet="PhieuKhamBenhs" />
+      <End Role="CT_PhieuKhamBenh" EntitySet="CT_PhieuKhamBenh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Thuoc" Association="Self.FK_Thuoc">
+      <End Role="Thuoc" EntitySet="Thuocs" />
+      <End Role="CT_PhieuKhamBenh" EntitySet="CT_PhieuKhamBenh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonVi" Association="Self.FK_DonVi">
+      <End Role="DonVi" EntitySet="DonVis" />
+      <End Role="Thuoc" EntitySet="Thuocs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuKham_HoaDon" Association="Self.FK_PhieuKham_HoaDon">
+      <End Role="PhieuKhamBenh" EntitySet="PhieuKhamBenhs" />
+      <End Role="HoaDon" EntitySet="HoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BenhNhan" Association="Self.FK_BenhNhan">
+      <End Role="HoSoBenhNhan" EntitySet="HoSoBenhNhans" />
+      <End Role="PhieuKhamBenh" EntitySet="PhieuKhamBenhs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

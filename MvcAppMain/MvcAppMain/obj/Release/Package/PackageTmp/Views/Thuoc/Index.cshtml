@@ -1,0 +1,67 @@
+﻿@model IEnumerable<MvcAppMain.Models.Thuoc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<fieldset>
+    <legend>
+        @if (Session["Roles"].Equals("admin"))
+
+    {
+        <h2>Index</h2>
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DonVi.TenDonVi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenThuoc)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SoLuong)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DonGia)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DonVi.TenDonVi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenThuoc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoLuong)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DonGia)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID_Thuoc }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID_Thuoc }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID_Thuoc })
+                </td>
+            </tr>
+    }
+
+        </table>
+}
+else
+{
+    <text>
+        @Session["Username"].ToString()! You should be an admin to have valid to view this page
+    </text>
+}
+    </legend>
+            </fieldset>

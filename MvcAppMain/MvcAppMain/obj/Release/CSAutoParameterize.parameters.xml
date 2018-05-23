@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="QLPMContext-Web.config Connection String" description="QLPMContext Connection String used in web.config by the application to access the database." defaultValue="data source=QUOCBAO\SQLEXPRESS;initial catalog=QLPhongMachTu;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\CNPM\ nâng\ cao\\MvcAppMain\\MvcAppMain\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='QLPMContext']/@connectionString" />
+  </parameter>
+  <parameter name="QLPhongMachTuConnectionString-Web.config Connection String" description="QLPhongMachTuConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=qlpmt.database.windows.net;Initial Catalog=QLPhongMachTu;Persist Security Info=True;User ID=QuocBao;Password=[sasuke3061997]" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\CNPM\ nâng\ cao\\MvcAppMain\\MvcAppMain\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='QLPhongMachTuConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="QLPMContext_DatabasePublish-Web.config Connection String" description="QLPMContext_DatabasePublish Connection String used in web.config by the application to access the database." defaultValue="QLPMContext_DatabasePublish.ConnetionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\CNPM\ nâng\ cao\\MvcAppMain\\MvcAppMain\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='QLPMContext_DatabasePublish']/@connectionString" />
+  </parameter>
+</parameters>

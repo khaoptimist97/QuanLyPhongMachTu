@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLPhongMachTuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Benh">
+    <Key>
+      <PropertyRef Name="ID_Benh" />
+    </Key>
+    <Property Name="ID_Benh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenBenh" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="CachDung">
+    <Key>
+      <PropertyRef Name="ID_CachDung" />
+    </Key>
+    <Property Name="ID_CachDung" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenCachDung" Type="varchar" MaxLength="255" />
+    <Property Name="SoLanDung" Type="int" />
+  </EntityType>
+  <EntityType Name="CT_PhieuKhamBenh">
+    <Key>
+      <PropertyRef Name="ID_PhieuKham" />
+      <PropertyRef Name="ID_Thuoc" />
+    </Key>
+    <Property Name="ID_PhieuKham" Type="int" Nullable="false" />
+    <Property Name="ID_Thuoc" Type="int" Nullable="false" />
+    <Property Name="ID_CachDung" Type="int" Nullable="false" />
+    <Property Name="SoLuongThuocLay" Type="int" />
+  </EntityType>
+  <EntityType Name="DonVi">
+    <Key>
+      <PropertyRef Name="ID_DonVi" />
+    </Key>
+    <Property Name="ID_DonVi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenDonVi" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="ID_HoaDon" />
+      <PropertyRef Name="ID_PhieuKham" />
+    </Key>
+    <Property Name="ID_HoaDon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PhieuKham" Type="int" Nullable="false" />
+    <Property Name="TienKham" Type="int" />
+    <Property Name="TienThuoc" Type="int" />
+    <Property Name="DoanhThu" Type="int" />
+    <Property Name="GhiChu" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="HoSoBenhNhan">
+    <Key>
+      <PropertyRef Name="ID_BenhNhan" />
+    </Key>
+    <Property Name="ID_BenhNhan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HoTen" Type="varchar" MaxLength="255" />
+    <Property Name="GioiTinh" Type="bit" />
+    <Property Name="NamSinh" Type="date" />
+    <Property Name="DiaChi" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="PhieuKhamBenh">
+    <Key>
+      <PropertyRef Name="ID_PhieuKham" />
+    </Key>
+    <Property Name="ID_PhieuKham" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_BenhNhan" Type="int" Nullable="false" />
+    <Property Name="ID_Benh" Type="int" Nullable="false" />
+    <Property Name="NgayKham" Type="date" />
+    <Property Name="TrieuChung" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ThamSo">
+    <Key>
+      <PropertyRef Name="ID_ThamSo" />
+    </Key>
+    <Property Name="ID_ThamSo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GiaTri" Type="int" />
+    <Property Name="GhiChu" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Thuoc">
+    <Key>
+      <PropertyRef Name="ID_Thuoc" />
+    </Key>
+    <Property Name="ID_Thuoc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_DonVi" Type="int" Nullable="false" />
+    <Property Name="TenThuoc" Type="varchar" MaxLength="255" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="DonGia" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID_User" />
+    </Key>
+    <Property Name="ID_User" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="255" />
+    <Property Name="Password" Type="varchar" MaxLength="255" />
+    <Property Name="Roles" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK_Benh">
+    <End Role="Benh" Type="Self.Benh" Multiplicity="1" />
+    <End Role="PhieuKhamBenh" Type="Self.PhieuKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Benh">
+        <PropertyRef Name="ID_Benh" />
+      </Principal>
+      <Dependent Role="PhieuKhamBenh">
+        <PropertyRef Name="ID_Benh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BenhNhan">
+    <End Role="HoSoBenhNhan" Type="Self.HoSoBenhNhan" Multiplicity="1" />
+    <End Role="PhieuKhamBenh" Type="Self.PhieuKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoSoBenhNhan">
+        <PropertyRef Name="ID_BenhNhan" />
+      </Principal>
+      <Dependent Role="PhieuKhamBenh">
+        <PropertyRef Name="ID_BenhNhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CachDung">
+    <End Role="CachDung" Type="Self.CachDung" Multiplicity="1" />
+    <End Role="CT_PhieuKhamBenh" Type="Self.CT_PhieuKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CachDung">
+        <PropertyRef Name="ID_CachDung" />
+      </Principal>
+      <Dependent Role="CT_PhieuKhamBenh">
+        <PropertyRef Name="ID_CachDung" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonVi">
+    <End Role="DonVi" Type="Self.DonVi" Multiplicity="1" />
+    <End Role="Thuoc" Type="Self.Thuoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonVi">
+        <PropertyRef Name="ID_DonVi" />
+      </Principal>
+      <Dependent Role="Thuoc">
+        <PropertyRef Name="ID_DonVi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuKham">
+    <End Role="PhieuKhamBenh" Type="Self.PhieuKhamBenh" Multiplicity="1" />
+    <End Role="CT_PhieuKhamBenh" Type="Self.CT_PhieuKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhieuKhamBenh">
+        <PropertyRef Name="ID_PhieuKham" />
+      </Principal>
+      <Dependent Role="CT_PhieuKhamBenh">
+        <PropertyRef Name="ID_PhieuKham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuKham_HoaDon">
+    <End Role="PhieuKhamBenh" Type="Self.PhieuKhamBenh" Multiplicity="1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhieuKhamBenh">
+        <PropertyRef Name="ID_PhieuKham" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="ID_PhieuKham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Thuoc">
+    <End Role="Thuoc" Type="Self.Thuoc" Multiplicity="1" />
+    <End Role="CT_PhieuKhamBenh" Type="Self.CT_PhieuKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Thuoc">
+        <PropertyRef Name="ID_Thuoc" />
+      </Principal>
+      <Dependent Role="CT_PhieuKhamBenh">
+        <PropertyRef Name="ID_Thuoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLPhongMachTuModelStoreContainer">
+    <EntitySet Name="Benh" EntityType="Self.Benh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CachDung" EntityType="Self.CachDung" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CT_PhieuKhamBenh" EntityType="Self.CT_PhieuKhamBenh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DonVi" EntityType="Self.DonVi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoSoBenhNhan" EntityType="Self.HoSoBenhNhan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhieuKhamBenh" EntityType="Self.PhieuKhamBenh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ThamSo" EntityType="Self.ThamSo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Thuoc" EntityType="Self.Thuoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Benh" Association="Self.FK_Benh">
+      <End Role="Benh" EntitySet="Benh" />
+      <End Role="PhieuKhamBenh" EntitySet="PhieuKhamBenh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BenhNhan" Association="Self.FK_BenhNhan">
+      <End Role="HoSoBenhNhan" EntitySet="HoSoBenhNhan" />
+      <End Role="PhieuKhamBenh" EntitySet="PhieuKhamBenh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CachDung" Association="Self.FK_CachDung">
+      <End Role="CachDung" EntitySet="CachDung" />
+      <End Role="CT_PhieuKhamBenh" EntitySet="CT_PhieuKhamBenh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonVi" Association="Self.FK_DonVi">
+      <End Role="DonVi" EntitySet="DonVi" />
+      <End Role="Thuoc" EntitySet="Thuoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuKham" Association="Self.FK_PhieuKham">
+      <End Role="PhieuKhamBenh" EntitySet="PhieuKhamBenh" />
+      <End Role="CT_PhieuKhamBenh" EntitySet="CT_PhieuKhamBenh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuKham_HoaDon" Association="Self.FK_PhieuKham_HoaDon">
+      <End Role="PhieuKhamBenh" EntitySet="PhieuKhamBenh" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Thuoc" Association="Self.FK_Thuoc">
+      <End Role="Thuoc" EntitySet="Thuoc" />
+      <End Role="CT_PhieuKhamBenh" EntitySet="CT_PhieuKhamBenh" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

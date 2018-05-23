@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLPhongMachTuModelStoreContainer" CdmEntityContainer="QLPhongMachTuEntities1">
+    <EntitySetMapping Name="BK_HoaDon">
+      <EntityTypeMapping TypeName="QLPhongMachTuModel.BK_HoaDon">
+        <MappingFragment StoreEntitySet="BK_HoaDon">
+          <ScalarProperty Name="ID_HoaDon" ColumnName="ID_HoaDon" />
+          <ScalarProperty Name="ID_PhieuKham" ColumnName="ID_PhieuKham" />
+          <ScalarProperty Name="TienKham" ColumnName="TienKham" />
+          <ScalarProperty Name="TienThuoc" ColumnName="TienThuoc" />
+          <ScalarProperty Name="DoanhThu" ColumnName="DoanhThu" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoaDons">
+      <EntityTypeMapping TypeName="QLPhongMachTuModel.HoaDon">
+        <MappingFragment StoreEntitySet="HoaDon">
+          <ScalarProperty Name="ID_HoaDon" ColumnName="ID_HoaDon" />
+          <ScalarProperty Name="ID_PhieuKham" ColumnName="ID_PhieuKham" />
+          <ScalarProperty Name="TienKham" ColumnName="TienKham" />
+          <ScalarProperty Name="TienThuoc" ColumnName="TienThuoc" />
+          <ScalarProperty Name="DoanhThu" ColumnName="DoanhThu" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_BKHoaDon" FunctionName="QLPhongMachTuModel.Store.SP_BKHoaDon" />
+  </EntityContainerMapping>
+</Mapping>

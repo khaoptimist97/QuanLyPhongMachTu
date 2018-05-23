@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Phần mềm quản lí Phòng mạch tư </title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <style>
+        html, body {
+            margin: 0;
+            padding-top: 0vh;
+            padding-left: 0vh;
+            height: 100%;
+        }
+
+        .navbar-brand {
+            padding-top: 0px;
+        }
+
+            .navbar-brand img {
+                height: 50px;
+            }
+
+        #body {
+            height: 100%;
+            padding: 10px;
+            /* Height of the footer */
+        }
+
+        footer {
+            left: 50px;
+            position: fixed;
+            bottom: 0;
+            text-align: left;
+            color: black;
+        }
+        /* NAVIGATION */
+        nav {
+            width: 120%;
+            margin: 0 auto;
+            background: black;
+            padding: 5px 0;
+            box-shadow: 0px 0px 0px #dedede;
+        }
+
+            nav ul {
+                list-style: none;
+                text-align: center;
+            }
+
+                nav ul li {
+                    display: inline-block;
+                }
+
+                    nav ul li a {
+                        display: block;
+                        padding: 15px;
+                        text-decoration: none;
+                        color: white;
+                        font-weight: 800;
+                        text-transform: uppercase;
+                        margin: 0 10px;
+                    }
+
+                        nav ul li a,
+                        nav ul li a::after,
+                        nav ul li a::before {
+                            transition: all .5s;
+                        }
+
+                            nav ul li a:hover {
+                                color: #555;
+                            }
+
+            /* stroke */
+            nav.fill ul li a {
+                position: relative;
+            }
+
+                nav.fill ul li a:after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    width: 0%;
+                    content: '.';
+                    color: transparent;
+                    background: #aaa;
+                    height: 1px;
+                }
+
+            nav.fill ul li a {
+                transition: all 2s;
+            }
+
+                nav.fill ul li a:after {
+                    text-align: left;
+                    content: '.';
+                    margin: 0;
+                    opacity: 0;
+                }
+
+                nav.fill ul li a:hover {
+                    color: #fff;
+                    z-index: 1;
+                }
+
+                    nav.fill ul li a:hover:after {
+                        z-index: -10;
+                        animation: fill 1s forwards;
+                        -webkit-animation: fill 1s forwards;
+                        -moz-animation: fill 1s forwards;
+                        opacity: 1;
+                    }
+
+        @@-webkit-keyframes fill {
+            0% {
+                width: 0%;
+                height: 1px;
+            }
+
+            50% {
+                width: 100%;
+                height: 1px;
+            }
+
+            100% {
+                width: 100%;
+                height: 100%;
+                background: #333;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <nav class="fill fixed-top" style="position:fixed; z-index:1000">
+        @if (Convert.ToBoolean(Session["IsAdmin"]) == true)
+        {
+            <a class="navbar-brand" href="/UserDetails/Index">
+                <img alt="Wrench" src="~/Content/themes/base/images/wrench_icon-1.png" />
+            </a>
+        }
+        else
+        {
+            <a class="navbar-brand" href="#">
+                <img alt="Wrench" src="~/Content/themes/base/images/wrench_icon-1.png" />
+            </a>
+        }
+        <p class="navbar-text" style="vertical-align:top; font-family:Arial"><strong>Phòng mạch P</strong>  </p>
+        <ul style="font-family:'Myriad Pro'">
+            <li>@Html.ActionLink("Tiếp nhận", "Index", "PhieuTiepNhans")</li>
+            <li>@Html.ActionLink("Tìm kiếm bệnh nhân", "Index", "HoSoBenhNhans")</li>
+            <li>@Html.ActionLink("Lập phiếu khám bệnh", "Index", "PhieuKhamBenhs")</li>
+            <li>@Html.ActionLink("Hóa đơn", "Index", "HoaDons")</li>
+            @if (Convert.ToBoolean(Session["IsAdmin"]) == true)
+    {
+        <li>@Html.ActionLink("Lập báo cáo", "Report", "BaoCaoDS")</li>
+}
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#exampleModal" style="color:aqua">
+                    <i class="fa fa-fw fa-sign-out" style="color:floralwhite"></i>Logout
+                </a>
+            </li>
+            <li>Hello, @Convert.ToString(Session["UserName"])</li>
+        </ul>
+    </nav>
+    <div class="container body-content">
+        <div id="body">
+            @RenderBody()
+        </div>
+        <footer>
+            <hr />
+            <p>&copy; Phần mềm quản lí phòng mạch - Phầm mềm sử dụng với mục đích học tập </p>
+        </footer>
+    </div>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color:black">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Chọn "Logout" nếu muốn đăng xuất</div>
+                <div class="modal-footer">
+                    @using (Html.BeginForm("Logout", "Authentication", FormMethod.Post))
+                    {
+                        <button class="btn btn-primary" type="submit">Logout</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿@model MvcAppMain.Models.HoaDon
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HoaDon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PhieuKhamBenh.TrieuChung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhieuKhamBenh.TrieuChung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TienKham)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TienKham)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TienThuoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TienThuoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DoanhThu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DoanhThu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GhiChu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GhiChu)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,35 @@
+﻿@model MvcAppMain.Models.CachDung
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CachDung</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenCachDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenCachDung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLanDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLanDung)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_CachDung }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
