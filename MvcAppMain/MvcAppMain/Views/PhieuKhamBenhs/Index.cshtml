@@ -374,6 +374,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="reset" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    <a class="btn btn-danger" href="#" id="btnXuat">Xuất</a>                
                 </div>
             </div>
         </div>
@@ -586,6 +587,7 @@
                             var Data = '<tr><td>' + result[i].TenBenhNhan + '</td><td>' + result[i].TienKham + '</td><td>' + result[i].TienThuoc + '</td><td>' + result[i].TongTien + '</td></tr>';
                             $("#detailsPhieuThu tbody").append(Data);
                         }
+                        $('#btnXuat').attr('href', '/PhieuThuTiens/XuatPhieuThuTien?IDPhieu=' + IDPhieu);
                     }
                 });
             }

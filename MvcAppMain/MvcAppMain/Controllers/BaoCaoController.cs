@@ -7,9 +7,12 @@ using System.Web.Mvc;
 using MvcAppMain.Report;
 using System.Web.UI.WebControls;
 using MvcAppMain.Report.DSBaoCaoDoanhThuTableAdapters;
+using MvcAppMain.Filters;
 
 namespace MvcAppMain.Controllers
 {
+    [Authorize]
+    [AdminFilter]
     public class BaoCaoController : Controller
     {
         // GET: BaoCao

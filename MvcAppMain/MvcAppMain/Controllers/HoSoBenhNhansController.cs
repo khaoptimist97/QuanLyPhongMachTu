@@ -12,6 +12,7 @@ using PagedList;
 
 namespace MvcAppMain.Controllers
 {
+    [Authorize]
     public class HoSoBenhNhansController : Controller
     {
         private QLPMContext db = new QLPMContext();

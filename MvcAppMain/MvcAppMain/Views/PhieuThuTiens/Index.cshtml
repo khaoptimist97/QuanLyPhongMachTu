@@ -145,7 +145,7 @@
     $("#txtSearch").autocomplete({
         source: function (request, response) {
             $.ajax({
-                url: '@Url.Action("GetSearchValue", "HoaDons")',
+                url: '@Url.Action("GetSearchValue", "PhieuThuTiens")',
                 dataType: "json",
                 data: { search: $("#txtSearch").val() },
                 success: function (data) {

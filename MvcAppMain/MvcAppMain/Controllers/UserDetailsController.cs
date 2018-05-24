@@ -6,11 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using MvcAppMain.Filters;
 using MvcAppMain.Help;
 using MvcAppMain.Models;
 
 namespace MvcAppMain.Controllers
 {
+    [Authorize]
+    [AdminFilter]
     public class UserDetailsController : Controller
     {
         private QLPMContext db = new QLPMContext();

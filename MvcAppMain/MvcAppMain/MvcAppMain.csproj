@@ -196,6 +196,7 @@
     <Compile Include="Controllers\BenhsController.cs" />
     <Compile Include="Controllers\CachDungsController.cs" />
     <Compile Include="Controllers\DonVisController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\PhieuThuTiensController.cs" />
     <Compile Include="Controllers\HoSoBenhNhansController.cs" />
     <Compile Include="Controllers\PhieuKhamBenhsController.cs" />
@@ -1157,6 +1158,7 @@
     <Content Include="Views\PhieuThuTiens\XuatPhieuThuTien.cshtml" />
     <Content Include="Views\BaoCao\ReportDoanhSo.cshtml" />
     <Content Include="Views\BaoCao\Report.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
