@@ -31,8 +31,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>ID Thuoc</Value>
-                              <Style />
+                              <Value>Tên thuốc</Value>
+                              <Style>
+                                <FontStyle>Italic</FontStyle>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -62,7 +65,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>So Luong Thuoc Lay</Value>
-                              <Style />
+                              <Style>
+                                <FontStyle>Italic</FontStyle>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -92,7 +98,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Don Gia Ban</Value>
-                              <Style />
+                              <Style>
+                                <FontStyle>Italic</FontStyle>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -122,7 +131,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Thanh Tien</Value>
-                              <Style />
+                              <Style>
+                                <FontStyle>Italic</FontStyle>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -290,8 +302,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>XuatPhieu</DataSetName>
-        <Top>0.7112cm</Top>
-        <Left>1.29328cm</Left>
+        <Top>2.17467cm</Top>
+        <Left>1.36384cm</Left>
         <Height>1.2cm</Height>
         <Width>10cm</Width>
         <Style>
@@ -308,14 +320,16 @@
             <TextRuns>
               <TextRun>
                 <Value>Tiền thuốc:</Value>
-                <Style />
+                <Style>
+                  <Color>Red</Color>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox10</rd:DefaultName>
-        <Top>2.88078cm</Top>
+        <Top>5.43842cm</Top>
         <Left>1.29328cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -345,7 +359,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>2.88078cm</Top>
+        <Top>5.43842cm</Top>
         <Left>3.86384cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -368,14 +382,16 @@
             <TextRuns>
               <TextRun>
                 <Value>Tổng tiền:</Value>
-                <Style />
+                <Style>
+                  <Color>Red</Color>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox10</rd:DefaultName>
-        <Top>3.65717cm</Top>
+        <Top>6.21481cm</Top>
         <Left>1.29328cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -405,7 +421,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>3.65717cm</Top>
+        <Top>6.21481cm</Top>
         <Left>3.86384cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -420,14 +436,76 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Họ tên:</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>0.61708cm</Top>
+        <Left>1.36384cm</Left>
+        <Height>0.6cm</Height>
+        <Width>1.40639cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!HoTen.Value, "XuatPhieu")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox5</rd:DefaultName>
+        <Top>0.61708cm</Top>
+        <Left>3.23356cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>3.75694in</Height>
     <Style />
   </Body>
   <Width>6.5in</Width>
   <Page>
     <PageHeader>
-      <Height>2.54cm</Height>
+      <Height>3.14cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -438,10 +516,11 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Chi tiết khám bệnh</Value>
+                  <Value>Chi tiết phiếu thu tiền</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Color>MidnightBlue</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -449,7 +528,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.81703cm</Top>
+          <Top>0.42897cm</Top>
           <Left>1.29328cm</Left>
           <Height>1.00569cm</Height>
           <Width>7.03319cm</Width>
@@ -519,6 +598,10 @@
         <Field Name="TongTien">
           <DataField>TongTien</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="HoTen">
+          <DataField>HoTen</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

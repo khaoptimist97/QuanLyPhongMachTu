@@ -291,6 +291,8 @@ namespace MvcAppMain.Report {
             
             private global::System.Data.DataColumn columnTongTien;
             
+            private global::System.Data.DataColumn columnHoTen;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public CT_PhieuKhamBenhDataTable() {
@@ -374,6 +376,14 @@ namespace MvcAppMain.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn HoTenColumn {
+                get {
+                    return this.columnHoTen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -409,7 +419,7 @@ namespace MvcAppMain.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CT_PhieuKhamBenhRow AddCT_PhieuKhamBenhRow(int ID_PhieuKham, int SoLuongThuocLay, int DonGiaBan, int ThanhTien, string TenThuoc, int TongTien) {
+            public CT_PhieuKhamBenhRow AddCT_PhieuKhamBenhRow(int ID_PhieuKham, int SoLuongThuocLay, int DonGiaBan, int ThanhTien, string TenThuoc, int TongTien, string HoTen) {
                 CT_PhieuKhamBenhRow rowCT_PhieuKhamBenhRow = ((CT_PhieuKhamBenhRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_PhieuKham,
@@ -417,7 +427,8 @@ namespace MvcAppMain.Report {
                         DonGiaBan,
                         ThanhTien,
                         TenThuoc,
-                        TongTien};
+                        TongTien,
+                        HoTen};
                 rowCT_PhieuKhamBenhRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCT_PhieuKhamBenhRow);
                 return rowCT_PhieuKhamBenhRow;
@@ -446,6 +457,7 @@ namespace MvcAppMain.Report {
                 this.columnThanhTien = base.Columns["ThanhTien"];
                 this.columnTenThuoc = base.Columns["TenThuoc"];
                 this.columnTongTien = base.Columns["TongTien"];
+                this.columnHoTen = base.Columns["HoTen"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -463,12 +475,15 @@ namespace MvcAppMain.Report {
                 base.Columns.Add(this.columnTenThuoc);
                 this.columnTongTien = new global::System.Data.DataColumn("TongTien", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTongTien);
+                this.columnHoTen = new global::System.Data.DataColumn("HoTen", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHoTen);
                 this.columnID_PhieuKham.AllowDBNull = false;
                 this.columnSoLuongThuocLay.AllowDBNull = false;
                 this.columnDonGiaBan.AllowDBNull = false;
                 this.columnThanhTien.AllowDBNull = false;
                 this.columnTenThuoc.MaxLength = 255;
                 this.columnTongTien.AllowDBNull = false;
+                this.columnHoTen.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -682,6 +697,22 @@ namespace MvcAppMain.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string HoTen {
+                get {
+                    try {
+                        return ((string)(this[this.tableCT_PhieuKhamBenh.HoTenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HoTen\' in table \'CT_PhieuKhamBenh\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCT_PhieuKhamBenh.HoTenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsTenThuocNull() {
                 return this.IsNull(this.tableCT_PhieuKhamBenh.TenThuocColumn);
             }
@@ -690,6 +721,18 @@ namespace MvcAppMain.Report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetTenThuocNull() {
                 this[this.tableCT_PhieuKhamBenh.TenThuocColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsHoTenNull() {
+                return this.IsNull(this.tableCT_PhieuKhamBenh.HoTenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetHoTenNull() {
+                this[this.tableCT_PhieuKhamBenh.HoTenColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -858,6 +901,7 @@ namespace MvcAppMain.Report.XuatPhieuTableAdapters {
             tableMapping.ColumnMappings.Add("ThanhTien", "ThanhTien");
             tableMapping.ColumnMappings.Add("TenThuoc", "TenThuoc");
             tableMapping.ColumnMappings.Add("TongTien", "TongTien");
+            tableMapping.ColumnMappings.Add("HoTen", "HoTen");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -874,10 +918,13 @@ namespace MvcAppMain.Report.XuatPhieuTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ct.ID_PhieuKham, t.TenThuoc, ct.SoLuongThuocLay, ct.DonGiaBan, ct.ThanhTien, hd.TongTien
+            this._commandCollection[0].CommandText = @"SELECT ct.ID_PhieuKham, t.TenThuoc, ct.SoLuongThuocLay, ct.DonGiaBan, ct.ThanhTien, hd.TongTien, hs.HoTen
 FROM   CT_PhieuKhamBenh AS ct INNER JOIN
              Thuoc AS t ON ct.ID_Thuoc = t.ID_Thuoc INNER JOIN
-             HoaDon AS hd ON ct.ID_PhieuKham = hd.ID_PhieuKham
+             HoaDon AS hd ON ct.ID_PhieuKham = hd.ID_PhieuKham INNER JOIN
+             PhieuKhamBenh AS pk ON ct.ID_PhieuKham = pk.ID_PhieuKham INNER JOIN
+             PhieuTiepNhan AS ptn ON pk.IDPhieuTN = ptn.IDPhieuTN INNER JOIN
+             HoSoBenhNhan AS hs ON ptn.ID_BenhNhan = hs.ID_BenhNhan
 WHERE (ct.ID_PhieuKham = @IDPhieu)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDPhieu", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PhieuKham", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
