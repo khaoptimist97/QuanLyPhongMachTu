@@ -191,7 +191,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BUS\UserBusinessLayer.cs" />
-    <Compile Include="clsNgayKham.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\BaoCaoController.cs" />
     <Compile Include="Controllers\BenhsController.cs" />
@@ -314,16 +313,12 @@
     <Content Include="Content\images\ui-icons_ef8c08_256x240.png" />
     <Content Include="Content\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
-    <Content Include="Content\Image\Affirmative.png" />
-    <Content Include="Content\Image\BG-CarBrand.jpg" />
-    <Content Include="Content\Image\BG-DSxe.jpg" />
-    <Content Include="Content\Image\BG-Fix.jpeg" />
-    <Content Include="Content\Image\BG-FIxDetail.jpg" />
-    <Content Include="Content\Image\BG-Home1.jpg" />
+    <Content Include="Content\Image\BG-TiepNhan.jpg" />
     <Content Include="Content\Image\BG-Login.jpg" />
     <Content Include="Content\Image\BG-Paying.jpg" />
-    <Content Include="Content\Image\BG-Recieve.jpg" />
+    <Content Include="Content\Image\BG-PhieuKham.jpg" />
     <Content Include="Content\Image\BG-Report.jpg" />
+    <Content Include="Content\Image\BG-Search.jpg" />
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\jquery-ui.structure.css" />

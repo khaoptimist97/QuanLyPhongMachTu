@@ -5,63 +5,76 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Details</h2>
+<link href="~/Content/CSSforPageAdmin.css" rel="stylesheet" />
 
-<div>
-    <h4>Thuoc</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CachDung.TenCachDung)
-        </dt>
+<h2>Chi Tiết </h2>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.CachDung.TenCachDung)
+                                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CachDung.TenCachDung)
-        </dd>
+                                <dd>
+                                    @Html.DisplayFor(model => model.CachDung.TenCachDung)
+                                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DonVi.TenDonVi)
-        </dt>
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.DonVi.TenDonVi)
+                                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DonVi.TenDonVi)
-        </dd>
+                                <dd>
+                                    @Html.DisplayFor(model => model.DonVi.TenDonVi)
+                                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TenThuoc)
-        </dt>
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.TenThuoc)
+                                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TenThuoc)
-        </dd>
+                                <dd>
+                                    @Html.DisplayFor(model => model.TenThuoc)
+                                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SoLuong)
-        </dt>
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.SoLuong)
+                                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SoLuong)
-        </dd>
+                                <dd>
+                                    @Html.DisplayFor(model => model.SoLuong)
+                                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DonGia)
-        </dt>
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.DonGia)
+                                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DonGia)
-        </dd>
+                                <dd>
+                                    @Html.DisplayFor(model => model.DonGia)
+                                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Deleted)
-        </dt>
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Deleted)
+                                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Deleted)
-        </dd>
+                                <dd>
+                                    @Html.DisplayFor(model => model.Deleted)
+                                </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_Thuoc }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                            </dl>
+                        </div>
+                        <p>
+                            @Html.ActionLink("Edit", "Edit", new { id = Model.ID_Thuoc }) |
+                            @Html.ActionLink("Back to List", "Index")
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+

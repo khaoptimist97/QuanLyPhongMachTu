@@ -5,37 +5,49 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Delete</h2>
+<link href="~/Content/CSSforPageAdmin.css" rel="stylesheet" />
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>CachDung</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TenCachDung)
-        </dt>
+<h2>Chi Tiết </h2>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-horizontal" style="padding-left:30px; ">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.TenCachDung)
+                                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TenCachDung)
-        </dd>
+                                <dd>
+                                    @Html.DisplayFor(model => model.TenCachDung)
+                                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Deleted)
-        </dt>
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Deleted)
+                                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Deleted)
-        </dd>
+                                <dd>
+                                    @Html.DisplayFor(model => model.Deleted)
+                                </dd>
 
-    </dl>
+                            </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                                <div class="form-actions no-color">
+                                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                                    @Html.ActionLink("Back to List", "Index")
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    }
-</div>
+    </div>
+</body>

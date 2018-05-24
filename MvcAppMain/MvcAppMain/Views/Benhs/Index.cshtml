@@ -5,30 +5,56 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TenBenh)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenBenh)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_Benh }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_Benh }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_Benh })
-        </td>
-    </tr>
-}
-
-</table>
+<h2 style="text-align:center">Quản lý Loại Bệnh</h2>
+<br />
+<div class="container-fluid">
+    <!-- Example DataTables Card-->
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i> Loại Bệnh
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div style="margin-left:2em; margin-bottom:1em; font-weight:bold">
+                    @using (Html.BeginForm("Create", "Benhs", FormMethod.Get))
+                    {
+                        <button type="submit" class="btn btn-primary" name="themmoi">THÊM MỚI</button>
+                    }
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr style="text-align:center">
+                            <th style="width:50%">Tên Bệnh</th>
+                            <th style="width:50%">Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr style="text-align:center">
+                            <th style="width:50%">Tên Bệnh</th>
+                            <th style="width:50%">Chức năng</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.TenBenh</td>
+                                <td style="text-align:center">
+                                    @using (Html.BeginForm())
+                                    {
+                                        <button class="btn glyphicon glyphicon-info" style="width:120px;"> @Html.ActionLink("Xem chi tiết", "Details", new { id = item.ID_Benh })</button>
+                                        <button class="btn" style="width:120px;">@Html.ActionLink("Sửa", "Edit", new { id = item.ID_Benh })</button>
+                                        <button class="btn" style="width:120px;">@Html.ActionLink("Xóa", "Delete", new { id = item.ID_Benh })</button>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+</div>

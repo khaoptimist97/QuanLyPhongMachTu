@@ -591,5 +591,4 @@ C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.M
 C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.Migrations.UpdateCachDung.resources
 C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.Migrations.UpdateCT.resources
 C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.Migrations.ThuocDeleted.resources
-C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.csprojResolveAssemblyReference.cache
 C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Report\XuatPhieu.rdlc
