@@ -285,8 +285,6 @@ namespace MvcAppMain.Report {
             
             private global::System.Data.DataColumn columnSoLuongBenhNhan;
             
-            private global::System.Data.DataColumn columnThang;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public PhieuKhamBenhDataTable() {
@@ -346,14 +344,6 @@ namespace MvcAppMain.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ThangColumn {
-                get {
-                    return this.columnThang;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -389,13 +379,12 @@ namespace MvcAppMain.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PhieuKhamBenhRow AddPhieuKhamBenhRow(System.DateTime NgayKham, int DoanhThu, int SoLuongBenhNhan, int Thang) {
+            public PhieuKhamBenhRow AddPhieuKhamBenhRow(System.DateTime NgayKham, int DoanhThu, int SoLuongBenhNhan) {
                 PhieuKhamBenhRow rowPhieuKhamBenhRow = ((PhieuKhamBenhRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NgayKham,
                         DoanhThu,
-                        SoLuongBenhNhan,
-                        Thang};
+                        SoLuongBenhNhan};
                 rowPhieuKhamBenhRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPhieuKhamBenhRow);
                 return rowPhieuKhamBenhRow;
@@ -421,7 +410,6 @@ namespace MvcAppMain.Report {
                 this.columnNgayKham = base.Columns["NgayKham"];
                 this.columnDoanhThu = base.Columns["DoanhThu"];
                 this.columnSoLuongBenhNhan = base.Columns["SoLuongBenhNhan"];
-                this.columnThang = base.Columns["Thang"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -433,11 +421,8 @@ namespace MvcAppMain.Report {
                 base.Columns.Add(this.columnDoanhThu);
                 this.columnSoLuongBenhNhan = new global::System.Data.DataColumn("SoLuongBenhNhan", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSoLuongBenhNhan);
-                this.columnThang = new global::System.Data.DataColumn("Thang", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnThang);
                 this.columnDoanhThu.ReadOnly = true;
                 this.columnSoLuongBenhNhan.ReadOnly = true;
-                this.columnThang.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -628,22 +613,6 @@ namespace MvcAppMain.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Thang {
-                get {
-                    try {
-                        return ((int)(this[this.tablePhieuKhamBenh.ThangColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Thang\' in table \'PhieuKhamBenh\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePhieuKhamBenh.ThangColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsNgayKhamNull() {
                 return this.IsNull(this.tablePhieuKhamBenh.NgayKhamColumn);
             }
@@ -676,18 +645,6 @@ namespace MvcAppMain.Report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSoLuongBenhNhanNull() {
                 this[this.tablePhieuKhamBenh.SoLuongBenhNhanColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsThangNull() {
-                return this.IsNull(this.tablePhieuKhamBenh.ThangColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetThangNull() {
-                this[this.tablePhieuKhamBenh.ThangColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -853,7 +810,6 @@ namespace MvcAppMain.Report.DSBaoCaoDoanhThuTableAdapters {
             tableMapping.ColumnMappings.Add("NgayKham", "NgayKham");
             tableMapping.ColumnMappings.Add("DoanhThu", "DoanhThu");
             tableMapping.ColumnMappings.Add("SoLuongBenhNhan", "SoLuongBenhNhan");
-            tableMapping.ColumnMappings.Add("Thang", "Thang");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -870,22 +826,35 @@ namespace MvcAppMain.Report.DSBaoCaoDoanhThuTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT PhieuKhamBenh.NgayKham, SUM(HoaDon.DoanhThu) AS DoanhThu, COUNT(PhieuKhamBenh.ID_BenhNhan) AS SoLuongBenhNhan, MONTH(PhieuKhamBenh.NgayKham) AS Thang
-FROM     HoaDon FULL OUTER JOIN
-                  PhieuKhamBenh ON HoaDon.ID_PhieuKham = PhieuKhamBenh.ID_PhieuKham
-WHERE  (MONTH(PhieuKhamBenh.NgayKham) = @thang)
-GROUP BY PhieuKhamBenh.NgayKham, MONTH(PhieuKhamBenh.NgayKham)";
+            this._commandCollection[0].CommandText = @"SELECT pkb.NgayKham, SUM(hd.TongTien) AS DoanhThu, COUNT(ptn.IDPhieuTN) AS SoLuongBenhNhan
+FROM   HoaDon AS hd INNER JOIN
+             PhieuKhamBenh AS pkb ON hd.ID_PhieuKham = pkb.ID_PhieuKham INNER JOIN
+             PhieuTiepNhan AS ptn ON pkb.IDPhieuTN = ptn.IDPhieuTN
+WHERE (pkb.NgayKham BETWEEN @date1 AND @date2)
+GROUP BY pkb.NgayKham";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@thang", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "NgayKham", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "NgayKham", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DSBaoCaoDoanhThu.PhieuKhamBenhDataTable dataTable, decimal thang) {
+        public virtual int Fill(DSBaoCaoDoanhThu.PhieuKhamBenhDataTable dataTable, string date1, string date2) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(thang));
+            if ((date1 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(date1));
+            }
+            if ((date2 == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(date2));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -897,9 +866,20 @@ GROUP BY PhieuKhamBenh.NgayKham, MONTH(PhieuKhamBenh.NgayKham)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSBaoCaoDoanhThu.PhieuKhamBenhDataTable GetData(decimal thang) {
+        public virtual DSBaoCaoDoanhThu.PhieuKhamBenhDataTable GetData(string date1, string date2) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(thang));
+            if ((date1 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(date1));
+            }
+            if ((date2 == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(date2));
+            }
             DSBaoCaoDoanhThu.PhieuKhamBenhDataTable dataTable = new DSBaoCaoDoanhThu.PhieuKhamBenhDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

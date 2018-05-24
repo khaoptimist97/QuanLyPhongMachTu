@@ -69,7 +69,7 @@
                     {
                         <div class="form-inline my-2 my-lg-0" style="margin-top:30px">
                             <label>Tìm theo tên: </label>
-                            @Html.TextBox("searchString", ViewBag.CurrentFilter as string, htmlAttributes: new { @class = "form-control mr-sm-2", @placeholder = "Nhập tên chủ xe", id = "txtSearch" })
+                            @Html.TextBox("searchString", ViewBag.CurrentFilter as string, htmlAttributes: new { @class = "form-control mr-sm-2", @placeholder = "Nhập tên bệnh nhân", id = "txtSearch" })
                             <input class="btn btn-primary my-2 my-sm-0" type="submit" value="Tìm Kiếm" />
                         </div>
 
@@ -154,6 +154,10 @@
                                                             <a href="#" onclick="Details('@item.ID_PhieuKham')" class="btn btn-primary glyphicon glyphicon-info-sign"></a>
                                                             <button type="button" class="btn btn-warning" id="btnSua" data-toggle="modal" data-target="#newOrderModal" data-whatever="@item.ID_PhieuKham">Sửa</button>
                                                             <a href="#" class="btn btn-danger" onclick="DeleteRecord('@item.ID_PhieuKham')">Xóa</a>
+                                                            @if (@item.ID_PhieuKham == Convert.ToInt32(Session["ID_PhieuKham"]))
+                                                            {
+                                                                <a href="#" onclick="DetailPhieuThu('@item.ID_PhieuKham')" class="btn btn-success">Phiếu thu tiền</a>
+                                                            }
                                                         </td>
                                                     </tr>
                                                 }
@@ -224,63 +228,67 @@
                                     <div class="col-md-4">
                                         <input type="text" id="TrieuChung" name="date" placeholder="Triệu chứng" class="form-control" />
                                     </div>
-                                </div>                     
                                 </div>
+                            </div>
 
-                                @*Chi Tiết Khám*@
-                                <h5 style="margin-top:10px;color:#ff6347">Chi tiết khám bệnh</h5>
-                                <hr />
-                                <div class="form-horizontal">
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2">
-                                            Thuốc
-                                        </label>
-                                        <div class="col-md-4">
-                                            @*<input type="text" id="productName" name="productName" placeholder="Product Name" class="form-control" />*@
-                                            @Html.DropDownList("ID_Thuoc", (SelectList)ViewBag.ID_Thuoc, "-- Chọn Thuốc --", new { @class = "form-control", id = "ID_Thuoc" })
-                                        </div>
-                                        <label class="control-label col-md-2">
-                                            Đơn giá
-                                        </label>
-                                        <div class="col-md-4">
-                                            <input type="number" id="DonGia" name="DonGia" placeholder="Giá phụ tùng" class="form-control" />
-                                        </div>
+                            @*Chi Tiết Khám*@
+                            <h5 style="margin-top:10px;color:#ff6347">Chi tiết khám bệnh</h5>
+                            <hr />
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">
+                                        Thuốc
+                                    </label>
+                                    <div class="col-md-4">
+                                        @*<input type="text" id="productName" name="productName" placeholder="Product Name" class="form-control" />*@
+                                        @Html.DropDownList("ID_Thuoc", (SelectList)ViewBag.ID_Thuoc, "-- Chọn Thuốc --", new { @class = "form-control", id = "ID_Thuoc" })
                                     </div>
-
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2">
-                                            Số lượng
-                                        </label>
-                                        <div class="col-md-4">
-                                            <input type="number" id="SoLuongBan" name="SoLuongBan" placeholder="Số lượng bán" class="form-control" />
-                                        </div>
-                                        <label class="control-label col-md-2">
-                                            Đơn Vị
-                                        </label>
-                                        <div class="col-md-4">
-                                            <input type="text" id="DonVi" name="DonVi" placeholder="Đơn Vị" class="form-control" />
-                                            <br />
-                                            <a id="addToList" class="btn btn-primary">Add To List</a>
-                                        </div>                       
-                                    </div>
-                                    
-
-                                    <div style="height: 300px; overflow: auto;">
-                                        <table id="detailsTable" class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th style="width:20%">Thuốc</th>
-                                                    <th style="width:20%">Số lượng</th>
-                                                    <th style="width:15%">Đơn giá</th>                                                
-                                                    <th style="width:35%">Thành tiền</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody></tbody>
-                                        </table>
+                                    <label class="control-label col-md-2">
+                                        Đơn giá
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input type="number" id="DonGia" name="DonGia" placeholder="Giá phụ tùng" class="form-control" />
                                     </div>
                                 </div>
 
-</fieldset>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">
+                                        Số lượng
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input type="number" id="SoLuongBan" name="SoLuongBan" placeholder="Số lượng bán" class="form-control" />
+                                        <br />
+                                        <label style="color:red" class="control-label col-md-2">@ViewBag.Errors</label>
+                                    </div>
+                                    <label class="control-label col-md-2">
+                                        Đơn Vị
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input type="text" id="DonVi" name="DonVi" placeholder="Đơn Vị" class="form-control" />
+                                        <br />
+                                        <a id="addToList" class="btn btn-primary">Add To List</a>
+
+                                    </div>
+
+
+                                </div>
+
+                                <div style="height: 300px; overflow: auto;">
+                                    <table id="detailsTable" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:20%">Thuốc</th>
+                                                <th style="width:20%">Số lượng</th>
+                                                <th style="width:15%">Đơn giá</th>
+                                                <th style="width:35%">Thành tiền</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </fieldset>
                     </form>
                 </div>
 
@@ -323,14 +331,45 @@
                         <table id="details" class="table">
                             <thead>
                                 <tr>
-                                    <th style="width:25%">Phụ tùng</th>
-                                    <th style="width:25%">Số lượng</th>
+                                    <th style="width:25%">Thuốc</th>
+                                    <th style="width:25%">Số lượng lấy</th>
                                     <th style="width:25%">Đơn giá</th>
                                     <th style="width:25%">Thành tiền</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
                         </table>
+                        <label style="color:brown;padding-left:75%;" id="tongTien"></label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*Desing Bootdtrap Modal For Detail PhieuThuTien*@
+    <div class="modal fade" id="DetailPhieuThu" style="color:black">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">&times;</a>
+                    <h4>Phiếu thu tiền </h4>
+                </div>
+                <div class="modal-body">
+                    <div style="height: 400px; overflow: auto;">
+                        <table id="detailsPhieuThu" class="table">
+                            <thead>
+                                <tr>
+                                    <th style="width:25%">Tên bệnh nhân</th>
+                                    <th style="width:25%">Tiền khám</th>
+                                    <th style="width:25%">Tiền thuốc</th>
+                                    <th style="width:25%">Tổng tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -381,7 +420,7 @@
                 var IDThuoc = $("#ID_Thuoc").val(),
                     DonGia = $("#DonGia").val(),
                     SoLuongBan = $("#SoLuongBan").val(),
-                
+
                     detailsTableBody = $("#detailsTable tbody");
 
                 var thuocItem = '<tr><td>' + IDThuoc + '</td><td>' + SoLuongBan + '</td><td>' + DonGia + '</td><td>' + (parseFloat(DonGia) * parseInt(SoLuongBan)) + '</td><td><a data-itemId="0" href="#" class="deleteItem">Remove</a></td></tr>';
@@ -395,7 +434,7 @@
                 $("#DonGia").val('');
                 $("#SoLuongBan").val('');
                 $("#DonVi").val('');
-       
+
             }
             // After Add A New Order In The List, If You Want, You Can Remove It.
             $(document).on('click', 'a.deleteItem', function (e) {
@@ -465,7 +504,7 @@
                 var pattern = /Date\(([^)]+)\)/;
                 var results = pattern.exec(value);
                 var dt = new Date(parseFloat(results[1]));
-                return (dt.getDate() + 1) + "/" + dt.getMonth() + "/" + dt.getFullYear();
+                return (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear();
             }
             //Edit
             var IDPhieu;
@@ -508,29 +547,50 @@
                 $.ajax({
                     type: "POST",
                     data: { IDPhieu: IDPhieu },
-                    url: "/PhieuSuaChuas/DeleteConfirmation",
+                    url: "/PhieuKhamBenhs/DeleteConfirmation",
                     success: function (result) {
                         $("#DeleteConfirmation").modal("hide");
                         $(".row_" + IDPhieu).remove();
                     }
                 })
             }
+            
             function Details(IDPhieu) {
                 $("#Details").modal("show");
+                var tongTien = 0;
                 $.ajax({
                     type: "GET",
                     data: { IDPhieu: IDPhieu },
-                    url: "/PhieuSuaChuas/GetDetails",
+                    url: "/PhieuKhamBenhs/GetDetails",
                     success: function (result) {
                         for (var i = 0; i < result.length; i++) {
-                            var Data = '<tr><td>' + result[i].IDPhuTung + '</td><td>' + result[i].SoLuongBan + '</td><td>' + result[i].DonGia + '</td><td>' + result[i].IDTienCong + '</td><td>' + result[i].NoiDung + '</td><td>' + result[i].ThanhTien + '</td></tr>';
+                            var Data = '<tr><td>' + result[i].ID_Thuoc + '</td><td>' + result[i].SoLuongThuocLay + '</td><td>' + result[i].DonGiaBan + '</td><td>' + result[i].ThanhTien + '</td></tr>';
                             $("#details tbody").append(Data);
+                            tongTien += result[i].ThanhTien;
                         }
+                        document.getElementById("tongTien").innerText = "Tổng tiền: "+tongTien.toString();
                     }
                 });
             }
             $('#Details').on('hide.bs.modal', function () {
                 $("#details tbody tr").remove();
+            })
+            function DetailPhieuThu(IDPhieu) {
+                $("#DetailPhieuThu").modal("show");
+                $.ajax({
+                    type: "GET",
+                    data: { IDPhieu: IDPhieu },
+                    url: "/PhieuKhamBenhs/GetDetailPhieuThu",
+                    success: function (result) {
+                        for (var i = 0; i < result.length; i++) {
+                            var Data = '<tr><td>' + result[i].TenBenhNhan + '</td><td>' + result[i].TienKham + '</td><td>' + result[i].TienThuoc + '</td><td>' + result[i].TongTien + '</td></tr>';
+                            $("#detailsPhieuThu tbody").append(Data);
+                        }
+                    }
+                });
+            }
+            $('#DetailPhieuThu').on('hide.bs.modal', function () {
+                $("#detailsPhieuThu tbody tr").remove();
             })
             $("#txtSearch").autocomplete({
                 source: function (request, response) {

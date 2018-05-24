@@ -193,10 +193,16 @@
     <Compile Include="BUS\UserBusinessLayer.cs" />
     <Compile Include="clsNgayKham.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\BaoCaoController.cs" />
+    <Compile Include="Controllers\BenhsController.cs" />
+    <Compile Include="Controllers\CachDungsController.cs" />
+    <Compile Include="Controllers\DonVisController.cs" />
+    <Compile Include="Controllers\PhieuThuTiensController.cs" />
     <Compile Include="Controllers\HoSoBenhNhansController.cs" />
     <Compile Include="Controllers\PhieuKhamBenhsController.cs" />
     <Compile Include="Controllers\PhieuTiepNhansController.cs" />
     <Compile Include="Controllers\ThamSoesController.cs" />
+    <Compile Include="Controllers\ThuocsController.cs" />
     <Compile Include="Controllers\UserDetailsController.cs" />
     <Compile Include="Controllers\UserTypesController.cs" />
     <Compile Include="DTO\BenhNhan.cs" />
@@ -229,6 +235,10 @@
     <Compile Include="Migrations\201805221804283_UpdateCT.cs" />
     <Compile Include="Migrations\201805221804283_UpdateCT.Designer.cs">
       <DependentUpon>201805221804283_UpdateCT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805231428403_ThuocDeleted.cs" />
+    <Compile Include="Migrations\201805231428403_ThuocDeleted.Designer.cs">
+      <DependentUpon>201805231428403_ThuocDeleted.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Benh.cs" />
@@ -271,9 +281,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSBaoCaoSuDungThuoc.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Report\XuatPhieu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XuatPhieu.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ViewModel\ChiTietPhieuViewModel.cs" />
     <Compile Include="ViewModel\PhieuKhamBenhViewModel.cs" />
+    <Compile Include="ViewModel\PhieuThuTienViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-datetimepicker.css" />
@@ -1028,6 +1044,17 @@
     <Content Include="Report\DSBaoCaoSuDungThuoc.xss">
       <DependentUpon>DSBaoCaoSuDungThuoc.xsd</DependentUpon>
     </Content>
+    <Content Include="Report\XuatPhieu.xsc">
+      <DependentUpon>XuatPhieu.xsd</DependentUpon>
+    </Content>
+    <None Include="Report\XuatPhieu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>XuatPhieu.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Report\XuatPhieu.xss">
+      <DependentUpon>XuatPhieu.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\faker.js" />
     <Content Include="Scripts\faker.min.js" />
@@ -1083,11 +1110,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Benh\Create.cshtml" />
-    <Content Include="Views\Benh\Delete.cshtml" />
-    <Content Include="Views\Benh\Details.cshtml" />
-    <Content Include="Views\Benh\Edit.cshtml" />
-    <Content Include="Views\Benh\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\HoSoBenhNhans\Create.cshtml" />
@@ -1115,11 +1137,31 @@
     <Content Include="Views\ThamSoes\Details.cshtml" />
     <Content Include="Views\ThamSoes\Edit.cshtml" />
     <Content Include="Views\ThamSoes\Index.cshtml" />
-    <Content Include="Views\PhieuKhamBenhs\Create.cshtml" />
-    <Content Include="Views\PhieuKhamBenhs\Delete.cshtml" />
-    <Content Include="Views\PhieuKhamBenhs\Details.cshtml" />
-    <Content Include="Views\PhieuKhamBenhs\Edit.cshtml" />
     <Content Include="Views\PhieuKhamBenhs\Index.cshtml" />
+    <Content Include="Views\Thuocs\Create.cshtml" />
+    <Content Include="Views\Thuocs\Delete.cshtml" />
+    <Content Include="Views\Thuocs\Details.cshtml" />
+    <Content Include="Views\Thuocs\Edit.cshtml" />
+    <Content Include="Views\Thuocs\Index.cshtml" />
+    <Content Include="Views\Benhs\Create.cshtml" />
+    <Content Include="Views\Benhs\Delete.cshtml" />
+    <Content Include="Views\Benhs\Details.cshtml" />
+    <Content Include="Views\Benhs\Edit.cshtml" />
+    <Content Include="Views\Benhs\Index.cshtml" />
+    <Content Include="Views\CachDungs\Create.cshtml" />
+    <Content Include="Views\CachDungs\Delete.cshtml" />
+    <Content Include="Views\CachDungs\Details.cshtml" />
+    <Content Include="Views\CachDungs\Edit.cshtml" />
+    <Content Include="Views\CachDungs\Index.cshtml" />
+    <Content Include="Views\DonVis\Create.cshtml" />
+    <Content Include="Views\DonVis\Delete.cshtml" />
+    <Content Include="Views\DonVis\Details.cshtml" />
+    <Content Include="Views\DonVis\Edit.cshtml" />
+    <Content Include="Views\DonVis\Index.cshtml" />
+    <Content Include="Views\PhieuThuTiens\Index.cshtml" />
+    <Content Include="Views\PhieuThuTiens\XuatPhieuThuTien.cshtml" />
+    <Content Include="Views\BaoCao\ReportDoanhSo.cshtml" />
+    <Content Include="Views\BaoCao\Report.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1159,6 +1201,9 @@
     <EmbeddedResource Include="Migrations\201805221804283_UpdateCT.resx">
       <DependentUpon>201805221804283_UpdateCT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805231428403_ThuocDeleted.resx">
+      <DependentUpon>201805231428403_ThuocDeleted.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\CRBaoCaoDoanhThu.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRBaoCaoDoanhThu.cs</LastGenOutput>
@@ -1169,6 +1214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\ReportBaoCaoDoanhThu.rdlc" />
     <EmbeddedResource Include="Report\ReportBaoCaoSuDungThuoc.rdlc" />
+    <Content Include="Report\XuatPhieu.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

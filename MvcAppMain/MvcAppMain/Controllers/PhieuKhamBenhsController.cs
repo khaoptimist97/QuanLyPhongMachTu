@@ -20,7 +20,6 @@ namespace MvcAppMain.Controllers
     public class PhieuKhamBenhsController : Controller
     {
         private QLPMContext db = new QLPMContext();
-
         // GET: PhieuSuaChuas
         public ViewResult Index(string currentFilter, string searchString, int? page)
         {
@@ -115,6 +114,8 @@ namespace MvcAppMain.Controllers
             if (IDPhieu == null && idPhieuTN != 0 && date != null && chitietphieukham != null && IDBenh!=0)
             {
                 PhieuKhamBenh phieuKham = new PhieuKhamBenh();
+                
+                int tienThuoc = 0;
                 phieuKham.IDPhieuTN = idPhieuTN;
                 phieuKham.ID_Benh = IDBenh;
                 phieuKham.NgayKham = date;
@@ -122,6 +123,10 @@ namespace MvcAppMain.Controllers
                 db.PhieuKhamBenhs.Add(phieuKham);
                 db.SaveChanges();
                 int idPhieuKham = phieuKham.ID_PhieuKham;
+                HoaDon hoaDon = new HoaDon();
+                hoaDon.ID_PhieuKham = idPhieuKham;
+                int tienKham = Convert.ToInt32(db.ThamSoes.Where(x => x.GhiChu.Contains("Tien kham")).SingleOrDefault().GiaTri); ;
+                hoaDon.TienKham = tienKham;
                 foreach (var ct in chitietphieukham)
                 {
                     CT_PhieuKhamBenh C = new CT_PhieuKhamBenh();
@@ -131,122 +136,155 @@ namespace MvcAppMain.Controllers
                     C.SoLuongThuocLay = ct.SoLuongThuocLay;
                     C.ThanhTien = ct.ThanhTien;
                     db.CT_PhieuKhamBenh.Add(C);
+                    tienThuoc += ct.ThanhTien;
                 }
+                hoaDon.TienThuoc = tienThuoc;
+                hoaDon.TongTien = tienKham + tienThuoc;
+                db.HoaDons.Add(hoaDon);
                 db.SaveChanges();
+                Session["ID_PhieuKham"] = idPhieuKham;
                 result = "Thành công! Thêm chi tiết hoàn tất!";
             }
-            //else
-            //{
-            //    try
-            //    {
-            //        //Trường hợp đã remove 1 hay nhiều ChiTietPhieuSua nào đó ...
-            //        ChiTietPhieuSua[] C = db.ChiTietPhieuSuas.Where(x => x.IDPhieu == IDPhieu).ToList().ToArray();
+            else
+            {
+                try
+                {
+                    int tienThuoc = 0;
+                    //Trường hợp đã remove 1 hay nhiều ChiTietKhamBenh nào đó ...
+                    CT_PhieuKhamBenh[] C = db.CT_PhieuKhamBenh.Where(x => x.ID_PhieuKham == IDPhieu && x.Deleted == false).ToList().ToArray();
 
-            //        List<int> listC = Helper.GhiIDPhuTungThanhMang(C);
-            //        List<int> listChiTiet = Helper.GhiIDPhuTungThanhMang(chitietphieusua);
-            //        //Tìm phần tử có trong C mà ko có trong chitietphieusua
-            //        var excepts = listC.Except(listChiTiet).ToArray();
-            //        if (excepts.Count() != 0)
-            //        {
-            //            foreach (var e in excepts)
-            //            {
-            //                ChiTietPhieuSua chiTietPhieuSua = db.ChiTietPhieuSuas.Find(IDPhieu, e);
-            //                chiTietPhieuSua.Deleted = true;
-            //                //Update lại thành Số lượng tồn, Tổng tiền, Tiền nợ
-            //                Helper.UpdateAfterDeleteChiTietPhieu(chiTietPhieuSua);
-            //                //Flag
-            //                db.Entry(chiTietPhieuSua).State = EntityState.Modified;
-            //            }
-            //            db.SaveChanges();
-            //        }
-            //        foreach (ChiTietPhieuSua chiTiet in chitietphieusua)
-            //        {
-            //            int idPhuTung = chiTiet.IDPhuTung;
-            //            //Nếu đã có ChiTietPhieu này thi chỉ thực hiện edit
-            //            if (db.ChiTietPhieuSuas.Any(x => x.IDPhieu == IDPhieu && x.IDPhuTung == idPhuTung))
-            //            {
-            //                ChiTietPhieuSua ct = db.ChiTietPhieuSuas.Find(IDPhieu, idPhuTung);
-            //                if (ct.Deleted == false) //Chi Edit vs ChiTiet chua xoa
-            //                {
-            //                    ct.DonGia = chiTiet.DonGia;
-            //                    ct.SoLuongBan = chiTiet.SoLuongBan;
-            //                    ct.IDTienCong = chiTiet.IDTienCong;
-            //                    ct.ThanhTien = chiTiet.ThanhTien;
-            //                    ct.NoiDung = chiTiet.NoiDung;
-            //                    db.Entry(ct).State = EntityState.Modified;
-            //                }
-            //                else //Neu xoa roi (Deleted = true) thi xoa hẳn giá trị đó, va them lai => To fire trigger, update Soluongton, ...
-            //                {
-            //                    //Xóa
-            //                    db.ChiTietPhieuSuas.Remove(ct);
-            //                    db.SaveChanges();
-            //                    //Gán & Add lại
-            //                    ct.DonGia = chiTiet.DonGia;
-            //                    ct.SoLuongBan = chiTiet.SoLuongBan;
-            //                    ct.IDTienCong = chiTiet.IDTienCong;
-            //                    ct.ThanhTien = chiTiet.ThanhTien;
-            //                    ct.NoiDung = chiTiet.NoiDung;
-            //                    ct.Deleted = false;
-            //                    db.ChiTietPhieuSuas.Add(ct);
-            //                    db.SaveChanges();
-            //                }
-            //            }
-            //            else //Nếu không có thì thêm mới
-            //            {
-            //                ChiTietPhieuSua ChiTiet = new ChiTietPhieuSua();
-            //                ChiTiet.IDPhieu = (int)IDPhieu;
-            //                ChiTiet.IDPhuTung = chiTiet.IDPhuTung;
-            //                ChiTiet.DonGia = chiTiet.DonGia;
-            //                ChiTiet.SoLuongBan = chiTiet.SoLuongBan;
-            //                ChiTiet.IDTienCong = chiTiet.IDTienCong;
-            //                ChiTiet.ThanhTien = chiTiet.ThanhTien;
-            //                ChiTiet.NoiDung = chiTiet.NoiDung;
-            //                db.ChiTietPhieuSuas.Add(ChiTiet);
-            //            }
-            //            db.SaveChanges();
-            //        }
-            //        result = "Sửa thành công!!";
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        result = "Sửa không thành công!!";
-            //        throw ex;
-            //    }
-            //}
-
+                    List<int> listC = Helper.GhiIDThuocThanhMang(C);
+                    List<int> listChiTiet = Helper.GhiIDThuocThanhMang(chitietphieukham);
+                    //Tìm phần tử có trong C mà ko có trong chitietphieusua
+                    var excepts = listC.Except(listChiTiet).ToArray();
+                    if (excepts.Count() != 0)
+                    {
+                        foreach (var e in excepts)
+                        {
+                            CT_PhieuKhamBenh chiTietPhieuKham = db.CT_PhieuKhamBenh.Find(IDPhieu, e);
+                            chiTietPhieuKham.Deleted = true;
+                            //Update lại thành Số lượng tồn
+                            Helper.UpdateAfterDeleteChiTietPhieu(chiTietPhieuKham);
+                            //Flag
+                            db.Entry(chiTietPhieuKham).State = EntityState.Modified;
+                        }
+                      
+                        db.SaveChanges();
+                    }
+                    foreach (CT_PhieuKhamBenh chiTiet in chitietphieukham)
+                    {
+                        int idThuoc = chiTiet.ID_Thuoc;
+                        
+                        //Nếu đã có ChiTietPhieu này thi chỉ thực hiện edit
+                        if (db.CT_PhieuKhamBenh.Any(x => x.ID_PhieuKham == IDPhieu && x.ID_Thuoc == idThuoc))
+                        {
+                            CT_PhieuKhamBenh ct = db.CT_PhieuKhamBenh.Find(IDPhieu, idThuoc);
+                            if (ct.Deleted == false) //Chi Edit vs ChiTiet chua xoa
+                            {
+                                ct.DonGiaBan = chiTiet.DonGiaBan;
+                                ct.SoLuongThuocLay = chiTiet.SoLuongThuocLay;
+                                ct.ThanhTien = chiTiet.ThanhTien;
+                                db.Entry(ct).State = EntityState.Modified;
+                            }
+                            else //Neu xoa roi (Deleted = true) thi xoa hẳn giá trị đó, va them lai => To fire trigger, update Soluongton, ...
+                            {
+                                //Xóa
+                                db.CT_PhieuKhamBenh.Remove(ct);
+                                db.SaveChanges();
+                                //Gán & Add lại
+                                ct.DonGiaBan = chiTiet.DonGiaBan;
+                                ct.SoLuongThuocLay = chiTiet.SoLuongThuocLay;
+                                ct.ThanhTien = chiTiet.ThanhTien;
+                                ct.Deleted = false;
+                                db.CT_PhieuKhamBenh.Add(ct);
+                                db.SaveChanges();
+                            }
+                        }
+                        else //Nếu không có thì thêm mới
+                        {
+                            CT_PhieuKhamBenh ChiTiet = new CT_PhieuKhamBenh();
+                            ChiTiet.ID_PhieuKham = (int)IDPhieu;
+                            ChiTiet.ID_Thuoc = chiTiet.ID_Thuoc;
+                            ChiTiet.DonGiaBan = chiTiet.DonGiaBan;
+                            ChiTiet.SoLuongThuocLay = chiTiet.SoLuongThuocLay;
+                            ChiTiet.ThanhTien = chiTiet.ThanhTien;
+                            db.CT_PhieuKhamBenh.Add(ChiTiet);
+                        }
+                        db.SaveChanges();
+                    }
+                    HoaDon phieuThuTien = db.HoaDons.Where(x=>x.ID_PhieuKham == IDPhieu).SingleOrDefault();
+                    var chiTietKham = db.CT_PhieuKhamBenh.Where(x=>x.ID_PhieuKham == IDPhieu && x.Deleted == false);
+                    foreach(var ele in chiTietKham)
+                    {
+                        tienThuoc += ele.ThanhTien;
+                    }
+                    phieuThuTien.TienThuoc = tienThuoc;
+                    phieuThuTien.TongTien = tienThuoc + phieuThuTien.TienKham;
+                    db.SaveChanges();
+                    Session["ID_PhieuKham"] = IDPhieu;
+                    result = "Sửa thành công!!";
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.Errors = ex.Message;
+                    throw ex;
+                }
+            }
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
         // GET: PhieuSuaChuas/Details/5
-        //public JsonResult GetDetails(int IDPhieu)
-        //{
-        //    var chiTiets = db.ChiTietPhieuSuas.Where(x => x.Deleted == false && x.IDPhieu == IDPhieu).ToList();
-        //    //Tạo List<ChiTietPhieuSuas> của PhieuSuaChua(IDPhieu)
-        //    List<ChiTietPhieuViewModel> chiTietPhieuViewModels = new List<ChiTietPhieuViewModel>();
-        //    foreach (var ele in chiTiets)
-        //    {
-        //        ChiTietPhieuViewModel models = new ChiTietPhieuViewModel()
-        //        {
-        //            IDPhieu = ele.IDPhieu,
-        //            IDPhuTung = ele.IDPhuTung,
-        //            SoLuongBan = ele.SoLuongBan,
-        //            DonGia = ele.DonGia,
-        //            IDTienCong = ele.IDTienCong,
-        //            ThanhTien = ele.ThanhTien,
-        //            NoiDung = ele.NoiDung
-        //        };
-        //        chiTietPhieuViewModels.Add(models);
-        //    }
-        //    return Json(chiTietPhieuViewModels, JsonRequestBehavior.AllowGet);
-        //}
+        public JsonResult GetDetails(int IDPhieu)
+        {
+            var chiTiets = db.CT_PhieuKhamBenh.Where(x => x.Deleted == false && x.ID_PhieuKham == IDPhieu).ToList();
+            //Tạo List<ChiTietPhieuKham> của PhieuKham(IDPhieu)
+            List<ChiTietPhieuViewModel> chiTietPhieuViewModels = new List<ChiTietPhieuViewModel>();
+            foreach (var ele in chiTiets)
+            {
+                ChiTietPhieuViewModel models = new ChiTietPhieuViewModel()
+                {
+                    ID_Thuoc = ele.ID_Thuoc,
+                    SoLuongThuocLay = ele.SoLuongThuocLay,
+                    DonGiaBan = ele.DonGiaBan,
+                    ThanhTien = ele.ThanhTien
+                };
+                chiTietPhieuViewModels.Add(models);
+            }
+            return Json(chiTietPhieuViewModels, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult GetDetailPhieuThu(int IDPhieu)
+        {
+            var phieuThus = db.HoaDons.Where(x => x.Deleted == false && x.ID_PhieuKham == IDPhieu).ToList();
+            //Tạo List<ChiTietPhieuSuas> của PhieuSuaChua(IDPhieu)
+            List<PhieuThuTienViewModel> phieuThuTienViewModels = new List<PhieuThuTienViewModel>();
+            foreach (var ele in phieuThus)
+            {
+                PhieuThuTienViewModel models = new PhieuThuTienViewModel()
+                {
+                    TenBenhNhan = ele.PhieuKhamBenh.PhieuTiepNhan.HoSoBenhNhan.HoTen,
+                    TienKham = ele.TienKham,
+                    TienThuoc = ele.TienThuoc,
+                    TongTien = ele.TongTien
+                };
+                phieuThuTienViewModels.Add(models);
+            }
+            return Json(phieuThuTienViewModels, JsonRequestBehavior.AllowGet);
+        }
         // POST: PhieuSuaChuas/Delete/5
         public JsonResult DeleteConfirmation(int IDPhieu)
         {
             bool result = false;
-            PhieuKhamBenh phieuSua = db.PhieuKhamBenhs.Find(IDPhieu);
-            if (phieuSua != null)
-            {
-                phieuSua.Deleted = true;
+            PhieuKhamBenh phieuKham = db.PhieuKhamBenhs.Find(IDPhieu);
+            var chiTiet = db.CT_PhieuKhamBenh.Where(x => x.ID_PhieuKham == IDPhieu);
+            HoaDon hoaDon = db.HoaDons.Where(x => x.ID_PhieuKham == IDPhieu).Single();
+            if (phieuKham != null)
+            {                
+                db.HoaDons.Remove(hoaDon);
+                foreach(var ele in chiTiet)
+                {
+                    db.CT_PhieuKhamBenh.Remove(ele);
+                }
+                db.PhieuKhamBenhs.Remove(phieuKham);
                 db.SaveChanges();
                 result = true;
             }

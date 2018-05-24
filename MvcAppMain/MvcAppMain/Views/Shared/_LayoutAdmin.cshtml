@@ -51,13 +51,16 @@
                             <a href="@Url.Action("Index", "UserDetails")">Quản lý Tài khoản</a>
                         </li>
                         <li>
-                            <a href="@Url.Action("Index", "PhuTungs")">Quản Lý Phụ tùng</a>
+                            <a href="@Url.Action("Index", "Thuocs")">Quản Lý Thuốc</a>
                         </li>
                         <li>
-                            <a href="@Url.Action("Index", "HieuXes")">Quản lý Hiệu xe</a>
+                            <a href="@Url.Action("Index", "Benhs")">Quản lý Loại bệnh</a>
                         </li>
                         <li>
-                            <a href="@Url.Action("Index", "TienCongs")">Quản lý Tiền công</a>
+                            <a href="@Url.Action("Index", "DonVis")">Quản lý Đơn Vị</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "CachDungs")">Quản lý Cách dùng</a>
                         </li>
                         <li>
                             <a href="@Url.Action("Index", "ThamSoes")">Quy Định </a>
@@ -70,11 +73,11 @@
                         <span class="nav-link-text">Function Pages</span>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseExamplePages">
-                        <li>@Html.ActionLink("Tiếp nhận xe", "Index", "PhieuTiepNhans")</li>
-                        <li>@Html.ActionLink("Tìm kiếm xe", "Index", "Xes")</li>
-                        <li>@Html.ActionLink("Lập phiếu sửa chữa", "Index", "PhieuSuaChuas")</li>
-                        <li>@Html.ActionLink("Lập phiếu thu tiền", "Index", "PhieuThuTiens")</li>
-                        <li>@Html.ActionLink("Lập báo cáo", "Report", "BaoCaoDS")</li>
+                        <li>@Html.ActionLink("Tiếp nhận bệnh nhân", "Index", "PhieuTiepNhans")</li>
+                        <li>@Html.ActionLink("Tìm kiếm thông tin bệnh nhân", "Index", "HoSoBenhNhans")</li>
+                        <li>@Html.ActionLink("Lập phiếu khám", "Index", "PhieuKhamBenhs")</li>
+                        <li>@Html.ActionLink("Xem phiếu thu tiền", "Index", "PhieuThuTiens")</li>
+                        <li>@Html.ActionLink("Lập báo cáo", "Report", "BaoCao")</li>
                     </ul>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">

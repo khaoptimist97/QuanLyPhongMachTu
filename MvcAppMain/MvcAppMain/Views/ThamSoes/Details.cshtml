@@ -4,32 +4,45 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+<link href="~/Content/CSSforPageAdmin.css" rel="stylesheet" />
+<h2>Thông Tin Quy Định</h2>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-horizontal" style="padding-left:30px; ">
+                            <div>
+                                <dl class="dl-horizontal">
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.GiaTri)
+                                    </dt>
 
-<h2>Details</h2>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.GiaTri)
+                                    </dd>
 
-<div>
-    <h4>ThamSo</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.GiaTri)
-        </dt>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.GhiChu)
+                                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.GiaTri)
-        </dd>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.GhiChu)
+                                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GhiChu)
-        </dt>
+                                </dl>
+                            </div>
+                            <p>
+                                @Html.ActionLink("Edit", "Edit", new { id = Model.ID_ThamSo }) |
+                                @Html.ActionLink("Back to List", "Index")
+                            </p>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.GhiChu)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_ThamSo }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

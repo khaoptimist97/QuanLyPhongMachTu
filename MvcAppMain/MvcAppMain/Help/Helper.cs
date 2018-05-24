@@ -8,56 +8,26 @@ namespace MvcAppMain.Help
 {
     public static class Helper
     {
-        //static QuanLyGaraOtoContext db = new QuanLyGaraOtoContext();
-        //public static List<int> GhiIDPhuTungThanhMang(ChiTietPhieuSua[] ct)
-        //{
-        //    List<int> list = new List<int>();
-        //    foreach(ChiTietPhieuSua c in ct)
-        //    {
-        //        list.Add(c.IDPhuTung);
-        //    }
-        //    return list;
-        //}
-        //public static void UpdateAfterDeleteChiTietPhieu(ChiTietPhieuSua ct)
-        //{
-        //    QuanLyGaraOtoContext db = new QuanLyGaraOtoContext();
-        //    PhieuSuaChua phieuSua = db.PhieuSuaChuas.Find(ct.IDPhieu);
-        //    PhuTung phuTung = db.PhuTungs.Find(ct.IDPhuTung);
-        //    Xe xe = db.Xes.Find(phieuSua.PhieuTiepNhan.Xe.IDBienSo);
-        //    //Xu ly
-        //    //Update so luong ton
-        //    phuTung.SoLuong += (int)ct.SoLuongBan;
-        //    //Update tong tien
-        //    int tongTien = (int)phieuSua.TongTien;
-        //    tongTien -= (int) ct.ThanhTien;
-        //    if(tongTien<0)
-        //    {
-        //        phieuSua.TongTien = 0;
-        //    }
-        //    else
-        //    {
-        //        phieuSua.TongTien = tongTien;
-        //    }
-        //    //Update tien no
-        //    int tienNo = xe.TienNo;
-        //    tienNo -= (int)ct.ThanhTien;
-        //    if (tienNo < 0)
-        //    {
-        //        xe.TienNo = 0;
-        //    }
-        //    else
-        //    {
-        //        xe.TienNo = tienNo;
-        //    }
-        //    //Save
-        //    db.SaveChanges();
-        //}
-        //public static void UpdateAfterPhieuThuTienUpdating(PhieuThuTien phieuThu, int soTienThuCu)
-        //{
-        //    Xe xe = db.Xes.Find(phieuThu.IDBienSo);
-        //    xe.TienNo += soTienThuCu;
-        //    xe.TienNo -= phieuThu.SoTienThu;
-        //    db.SaveChanges();
-        //}
+        static QLPMContext db = new QLPMContext();
+        public static List<int> GhiIDThuocThanhMang(CT_PhieuKhamBenh[] ct)
+        {
+            List<int> list = new List<int>();
+            foreach (CT_PhieuKhamBenh c in ct)
+            {
+                list.Add(c.ID_Thuoc);
+            }
+            return list;
+        }
+        public static void UpdateAfterDeleteChiTietPhieu(CT_PhieuKhamBenh ct)
+        {
+            QLPMContext db = new QLPMContext();            
+            Thuoc thuoc = db.Thuocs.Find(ct.ID_Thuoc);
+            //Xu ly
+            //Update so luong ton
+            thuoc.SoLuong += ct.SoLuongThuocLay;
+            //Save
+            db.SaveChanges();
+        }
+
     }
 }

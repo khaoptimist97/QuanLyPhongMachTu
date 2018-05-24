@@ -5,42 +5,74 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Edit</h2>
+<style>
+    .panel {
+        border: 1px solid #ffffff;
+        background: rgba(0,0,0,0.0);
+        padding: 30px 20px;
+        margin-top: 5vh;
+        box-shadow: 0px 3px 20px 6px rgba(0,0,0,0.75);
+    }
 
+    h2 {
+        text-align: center;
+    }
+
+    placeholder {
+        font-style: italic;
+    }
+</style>
+<h2>Sửa Thông Tin Tài Khoản</h2>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>UserDetail</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.UserName)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12"></div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="form-horizontal" style="padding-left:30px; ">
+                                <div class="form-horizontal">
+                                 
+                                    <hr />
+                                    @Html.ValidationSummary(true)
+                                    @Html.HiddenFor(model => model.UserName)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.UserTypeID, "UserTypeID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("UserTypeID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.UserTypeID, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Password,"Mật Khẩu:", htmlAttributes: new { @class = "control-label col-md-5" })
+                                        <div class="col-md-10">
+                                            @Html.TextBoxFor(model => model.Password, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Password)
+                                        </div>
+                                    </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.UserTypeID, "Loại Tài Khoản:", htmlAttributes: new { @class = "control-label col-md-6" })
+                                        <div class="col-md-10">
+                                            @Html.DropDownList("UserTypeID", ViewBag.UserTypeID as SelectList, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.UserTypeID)
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="form-actions no-color">
+                                        <button type="button" onclick="window.location.href='@Url.Action("Index","UserDetails")'" class="btn btn-default">Quay Lại</button>
+                                        <button type="submit"  class="btn btn-default">Xác Nhận</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+            </div>
+    </body>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

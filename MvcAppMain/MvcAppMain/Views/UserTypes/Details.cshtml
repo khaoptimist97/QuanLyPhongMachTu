@@ -5,23 +5,61 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Details</h2>
+<style>
+    .panel {
+        border: 1px solid #ffffff;
+        background: rgba(0,0,0,0.0);
+        padding: 30px 20px;
+        margin-top: 5vh;
+        box-shadow: 0px 3px 20px 6px rgba(0,0,0,0.75);
+    }
 
-<div>
-    <h4>UserType</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TypeName)
-        </dt>
+    h2 {
+        text-align: center;
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.TypeName)
-        </dd>
+    placeholder {
+        font-style: italic;
+    }
+</style>
+<h2>Thông Tin Loại Tài Khoản</h2>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-horizontal" style="padding-left:30px; ">
+                            <div>
+                                <dl class="dl-horizontal">
+                                    <dt>
+                                       Tên Loại:
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.TypeName)
+                                    </dd>
+
+                                </dl>
+                            </div>
+
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-actions no-color">
+                                    <button type="button" onclick="window.location.href='@Url.Action("Index","UserTypes")'" class="btn btn-default">Quay Lại</button>
+                                    <button type="button" onclick="window.location.href='@Url.Action("Edit","UserTypes", new { id = Model.ID })'" class="btn btn-default">Sửa thông tin</button>
+
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

@@ -121,7 +121,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Tỷ Lệ</Value>
+                              <Value>Tỷ Lệ (%)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -246,7 +246,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!SoLuongBenhNhan.Value/Sum(Fields!SoLuongBenhNhan.Value, "DSBaoCaoDoanhThu")</Value>
+                              <Value>=Round(Fields!SoLuongBenhNhan.Value/Sum(Fields!SoLuongBenhNhan.Value, "DSBaoCaoDoanhThu"),2)*100</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -265,6 +265,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -290,7 +291,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSBaoCaoDoanhThu</DataSetName>
-        <Top>1.005in</Top>
+        <Top>0.51889in</Top>
         <Left>0.425in</Left>
         <Height>0.5in</Height>
         <Width>5.69667in</Width>
@@ -300,12 +301,116 @@
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Tổng doanh thu:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>1.29389in</Top>
+        <Left>0.425in</Left>
+        <Height>0.25in</Height>
+        <Width>1.11806in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!DoanhThu.Value, "DSBaoCaoDoanhThu")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox5</rd:DefaultName>
+        <Top>1.29389in</Top>
+        <Left>1.54306in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>2in</Height>
     <Style />
   </Body>
   <Width>6.94667in</Width>
   <Page>
+    <PageHeader>
+      <Height>1in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Báo Cáo Doanh Thu</Value>
+                  <Style>
+                    <FontSize>22pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.38417in</Top>
+          <Left>0.425in</Left>
+          <Height>0.48611in</Height>
+          <Width>3.72458in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>
@@ -341,14 +446,10 @@
           <DataField>SoLuongBenhNhan</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Thang">
-          <DataField>Thang</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DSBaoCaoDoanhThu</rd:DataSetName>
-        <rd:SchemaPath>F:\CNPM nâng cao\Project\MvcAppMain\MvcAppMain\Report\DSBaoCaoDoanhThu.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\Report\DSBaoCaoDoanhThu.xsd</rd:SchemaPath>
         <rd:TableName>PhieuKhamBenh</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

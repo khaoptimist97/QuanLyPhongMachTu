@@ -4,32 +4,71 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+<style>
+    .panel {
+        border: 1px solid #ffffff;
+        background: rgba(0,0,0,0.0);
+        padding: 30px 20px;
+        margin-top: 5vh;
+        box-shadow: 0px 3px 20px 6px rgba(0,0,0,0.75);
+    }
 
-<h2>Details</h2>
+    h2 {
+        text-align: center;
+    }
 
-<div>
-    <h4>UserDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.UserType.TypeName)
-        </dt>
+    placeholder {
+        font-style: italic;
+    }
+</style>
+<h2>Thông Tin Tài Khoản</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.UserType.TypeName)
-        </dd>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-horizontal" style="padding-left:30px; ">
+                            <div>
+                              
+                                
+                                <dl class="dl-horizontal">
+                                    <dt>
+                                        Loại tài khoản
+                                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.UserType.TypeName)
+                                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Password)
-        </dd>
+                                    <dt>
+                                        Mật Khẩu
+                                    </dt>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.UserName }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Password)
+                                    </dd>
+
+                                </dl>
+                            </div>
+
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+
+                            <div class="form-actions no-color">
+                                <button type="button" onclick="window.location.href='@Url.Action("Index","UserDetails")'" class="btn btn-default">Quay Lại</button>
+                                <button type="button" onclick="window.location.href='@Url.Action("Edit","UserDetails", new { id = Model.UserName })'" class="btn btn-default">Sửa thông tin</button>
+
+                            </div>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

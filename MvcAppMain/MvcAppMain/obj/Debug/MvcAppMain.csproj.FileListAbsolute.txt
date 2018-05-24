@@ -586,8 +586,10 @@ C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\PagedList.Mvc.xml
 C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.Migrations.UpdateDatabase.resources
 C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.csproj.GenerateResource.cache
 C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.Migrations.QlphongmachV1.resources
-C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.csprojResolveAssemblyReference.cache
 C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.Migrations.UpdateChiTietPhieuKham.resources
 C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.Migrations.UpdatePhieuKhamBenh.resources
 C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.Migrations.UpdateCachDung.resources
 C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.Migrations.UpdateCT.resources
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.Migrations.ThuocDeleted.resources
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\obj\Debug\MvcAppMain.csprojResolveAssemblyReference.cache
+C:\Users\Minh Kha\Desktop\C#Project\MvcAppMain\MvcAppMain\bin\Report\XuatPhieu.rdlc

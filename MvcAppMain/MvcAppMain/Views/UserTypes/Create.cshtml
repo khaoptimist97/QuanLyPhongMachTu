@@ -5,32 +5,59 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Create</h2>
+<style>
+    .panel {
+        border: 1px solid #ffffff;
+        background: rgba(0,0,0,0.0);
+        padding: 30px 20px;
+        margin-top: 5vh;
+        box-shadow: 0px 3px 20px 6px rgba(0,0,0,0.75);
+    }
 
-@using (Html.BeginForm()) 
+    h2 {
+        text-align: center;
+    }
+
+    ::placeholder {
+        font-style: italic;
+    }
+</style>
+<h2>Thêm Loại Tài Khoản</h2>
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>UserType</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.TypeName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TypeName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TypeName, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12"></div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="panel panel-default">
+
+                        <div class="panel-body" style="padding-left:40px;">
+
+                            @Html.ValidationSummary(true)
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TypeName,"Tên Loại:", htmlAttributes: new { @class = "control-label col-md-5" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(model => model.TypeName, new { placeholder = "Tên Loại Tài Khoản", @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.TypeName)
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <button type="button" onclick="window.location.href='@Url.Action("Index","UserTypes")'" class="btn btn-default">Quay lại</button>
+                                    <input type="submit" value="Xác Nhận" class="btn btn-default" />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </body>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
