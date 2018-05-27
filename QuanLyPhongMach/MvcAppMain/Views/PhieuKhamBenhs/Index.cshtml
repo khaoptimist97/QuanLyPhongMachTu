@@ -1,0 +1,616 @@
+﻿@model IPagedList<MvcAppMain.Models.PhieuKhamBenh>
+@using PagedList;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-1.12.4.min.js"></script>
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-ui.js"></script>
+
+<style>
+    body {
+        color: white;
+        margin: 0;
+        padding-top: 0px;
+        padding-right: 40px;
+        background: url("/Content/Image/BG-PhieuKham.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif
+    }
+
+
+    .panel {
+        border: 1px solid #ffffff;
+        background: rgba(0,0,0,0.5);
+        padding: 10px 40px;
+        margin-top: 5vh;
+        box-shadow: 0px 3px 20px 6px rgba(0,0,0,0.75);
+        width: 99%;
+    }
+
+    h2 {
+        margin: 0;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        color: #fafc0d;
+    }
+
+    footer {
+        position: unset;
+    }
+
+    table {
+        text-align: center;
+    }
+
+
+    .tbody {
+        background-color: red;
+    }
+
+    th {
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-md-1 col-sm-2 col-xs-12"> </div>
+
+            <div class="col-md-11 col-sm-9 col-xs-12">
+                <div class="panel panel-default">
+                    <h1 style="font-family:'Myriad Pro'; text-align:center; color: #fafc0d;">DANH SÁCH PHIẾU KHÁM</h1>
+                    <br />
+                    @using (Html.BeginForm("Index", "PhieuKhamBenhs", FormMethod.Get))
+                    {
+                        <div class="form-inline my-2 my-lg-0" style="margin-top:30px">
+                            <label>Tìm theo tên: </label>
+                            @Html.TextBox("searchString", ViewBag.CurrentFilter as string, htmlAttributes: new { @class = "form-control mr-sm-2", @placeholder = "Nhập tên bệnh nhân", id = "txtSearch" })
+                            <input class="btn btn-primary my-2 my-sm-0" type="submit" value="Tìm Kiếm" />
+                        </div>
+
+                    }                   
+                    <div class="modal fade" id="backupModal" tabindex="-1" role="dialog" aria-labelledby="backupModal" aria-hidden="true" style="color:black;font-size:16px">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="backupModal" style="color:red">Ready to Backup?</h5>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">Backup được thực hiện vào mỗi cuối tháng, bạn có chắc muốn backup dữ liệu không?</div>
+                                <div class="modal-footer">
+                                    @using (Html.BeginForm("Backup", "Backup", FormMethod.Post))
+                                    {
+                                        <button class="btn btn-primary" type="submit">Confirm</button>
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button style="margin-right:10px" class="btn btn-primary pull-right" onclick="addNewOrder()">New</button>
+                    @*Receive All Database Data From Controller And Display Those Data In Client Side*@
+                    <div class="row" style="margin-top:0">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div>
+                                        <table class="table  table-bordered" id="myTable">
+                                            <tr>
+                                                <th>
+                                                    <strong>
+                                                        Tên bệnh nhân
+                                                    </strong>
+                                                </th>
+                                                <th>
+                                                    <Strong>
+                                                        Loại bệnh
+                                                    </Strong>
+                                                </th>
+                                                <th>
+                                                    <Strong>
+                                                        Ngày khám
+                                                    </Strong>
+                                                </th>
+                                                <th>
+                                                    <Strong>
+                                                        Triệu chứng
+                                                    </Strong>
+                                                </th>
+                                                <td></td>
+                                            </tr>
+                                            @if (Model.Count() != 0)
+                                            {
+                                                foreach (var item in Model)
+                                                {
+                                                    <tr class="row_@item.ID_PhieuKham">
+                                                        @Html.HiddenFor(m => item.ID_PhieuKham, new { @id = "ID_PhieuKham" })
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.PhieuTiepNhan.HoSoBenhNhan.HoTen)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.Benh.TenBenh)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.NgayKham)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.TrieuChung)
+                                                        </td>
+                                                        <td>
+                                                            <a href="#" onclick="Details('@item.ID_PhieuKham')" class="btn btn-primary glyphicon glyphicon-info-sign"></a>
+                                                            <button type="button" class="btn btn-warning" id="btnSua" data-toggle="modal" data-target="#newOrderModal" data-whatever="@item.ID_PhieuKham">Sửa</button>
+                                                            <a href="#" class="btn btn-danger" onclick="DeleteRecord('@item.ID_PhieuKham')">Xóa</a>
+                                                            @if (@item.ID_PhieuKham == Convert.ToInt32(Session["ID_PhieuKham"]))
+                                                            {
+                                                                <a href="#" onclick="DetailPhieuThu('@item.ID_PhieuKham')" class="btn btn-success">Phiếu thu tiền</a>
+                                                            }
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <tr>
+                                                    <td colspan="5"> Records not found </td>
+                                                </tr>
+
+                                            }
+                                        </table>
+                                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    @*Desing Bootdtrap Modal With Add Form*@
+    <div class="modal fade" id="newOrderModal" style="color:black" tabindex="-1">
+        <div class="modal-dialog modal-lg" style=" width: 900px !important;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">&times;</a>
+                    <h4 id="ModalTitle">Add New </h4>
+                </div>
+
+                <div class="modal-body">
+                    <form id="NewOrderForm">
+                        <fieldset id="SubmitForm">
+                            @*Phiếu Khám*@
+                            <h5 style="color:#ff6347">Phiếu Khám</h5>
+                            <hr />
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">
+                                        Phiếu tiếp nhận
+                                    </label>
+                                    <div class="col-md-4">
+                                        @*<input type="text" id="name" name="name" placeholder="Customer Name" class="form-control" />*@
+                                        @Html.DropDownList("IDPhieuTN", (SelectList)ViewBag.IDPhieuTN, new { @class = "form-control", id = "idPhieuTN" })
+                                    </div>
+                                    <label class="control-label col-md-2">
+                                        Ngày khám
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input type="text" id="date" name="date" placeholder="Ngày khám" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">
+                                        Chẩn đoán bệnh
+                                    </label>
+                                    <div class="col-md-4">
+                                        @*<input type="text" id="name" name="name" placeholder="Customer Name" class="form-control" />*@
+                                        @Html.DropDownList("ID_Benh", (SelectList)ViewBag.ID_Benh, new { @class = "form-control", id = "BenhID" })
+                                    </div>
+                                    <label class="control-label col-md-2">
+                                        Triệu chứng
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input type="text" id="TrieuChung" name="date" placeholder="Triệu chứng" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            @*Chi Tiết Khám*@
+                            <h5 style="margin-top:10px;color:#ff6347">Chi tiết khám bệnh</h5>
+                            <hr />
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">
+                                        Thuốc
+                                    </label>
+                                    <div class="col-md-4">
+                                        @*<input type="text" id="productName" name="productName" placeholder="Product Name" class="form-control" />*@
+                                        @Html.DropDownList("ID_Thuoc", (SelectList)ViewBag.ID_Thuoc, "-- Chọn Thuốc --", new { @class = "form-control", id = "ID_Thuoc" })
+                                    </div>
+                                    <label class="control-label col-md-2">
+                                        Đơn giá
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input type="number" id="DonGia" name="DonGia" placeholder="Giá thuốc" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">
+                                        Số lượng
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input type="number" id="SoLuongBan" name="SoLuongBan" placeholder="Số lượng bán" class="form-control" />
+                                        <br />
+                                        <label style="color:red" class="control-label col-md-2">@ViewBag.Errors</label>
+                                    </div>
+                                    <label class="control-label col-md-2">
+                                        Đơn Vị
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input type="text" id="DonVi" name="DonVi" placeholder="Đơn Vị" class="form-control" />
+                                        <br />
+                                        <a id="addToList" class="btn btn-primary">Add To List</a>
+
+                                    </div>
+
+
+                                </div>
+
+                                <div style="height: 300px; overflow: auto;">
+                                    <table id="detailsTable" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:20%">Thuốc</th>
+                                                <th style="width:20%">Số lượng</th>
+                                                <th style="width:15%">Đơn giá</th>
+                                                <th style="width:35%">Thành tiền</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button id="saveOrder" type="submit" class="btn btn-danger">Save</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    @*Desing Bootdtrap Modal For Delete*@
+    <div class="modal fade" id="DeleteConfirmation" style="color:black">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">&times;</a>
+                    <h4>Xóa Phiếu Khám Bệnh </h4>
+                </div>
+                <div class="modal-body">
+                    <h4>Bạn chắc chứ? Bạn muốn xóa Phiếu khám bệnh và Chi tiết khám bệnh ở trong?</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-primary" data-dismiss="modal">Cancle</button>
+                    <button type="submit" class="btn btn-danger" onclick="ConfirmDelete()">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*Desing Bootdtrap Modal For Detail*@
+    <div class="modal fade" id="Details" style="color:black">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">&times;</a>
+                    <h4>Details </h4>
+                </div>
+                <div class="modal-body">
+                    <div style="height: 400px; overflow: auto;">
+                        <table id="details" class="table">
+                            <thead>
+                                <tr>
+                                    <th style="width:25%">Thuốc</th>
+                                    <th style="width:25%">Số lượng lấy</th>
+                                    <th style="width:25%">Đơn giá</th>
+                                    <th style="width:25%">Thành tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <label style="color:brown;padding-left:75%;" id="tongTien"></label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*Desing Bootdtrap Modal For Detail PhieuThuTien*@
+    <div class="modal fade" id="DetailPhieuThu" style="color:black">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">&times;</a>
+                    <h4>Phiếu thu tiền </h4>
+                </div>
+                <div class="modal-body">
+                    <div style="height: 400px; overflow: auto;">
+                        <table id="detailsPhieuThu" class="table">
+                            <thead>
+                                <tr>
+                                    <th style="width:25%">Tên bệnh nhân</th>
+                                    <th style="width:25%">Tiền khám</th>
+                                    <th style="width:25%">Tiền thuốc</th>
+                                    <th style="width:25%">Tổng tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    <a class="btn btn-danger" href="#" id="btnXuat">Xuất</a>                
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+
+@section scripts{
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>
+                    //Để phân biệt lúc Add và Edit , 1:Add, 0:Edit
+            var flag = 0;
+            //Show Modal.
+            function addNewOrder() {
+                flag = 1;
+                $("#newOrderModal").modal();
+            }
+            //Auto hiển thị giá tiền tương ứng của loại phụ tùng
+        $("#ID_Thuoc").change(function () {
+
+            var IDThuoc = $("#ID_Thuoc").val();
+                $.ajax({
+                    type: 'GET',
+                    data: { IDThuoc: IDThuoc },
+                    url: '@Url.Action("GetInfoThuoc", "PhieuKhamBenhs")',
+                    success: function (result) {
+                        for (var i = 0; i < result.length; i++) {
+                            $("#DonGia").val(result[i].Gia);
+                            $("#DonVi").val(result[i].TenDV);
+                        }
+                    }
+                });
+            });
+            //Add Multiple Order.
+            $("#addToList").click(function (e) {
+                e.preventDefault();
+
+                if ($.trim($("#ID_Thuoc").val()) == "" || $.trim($("#DonGia").val()) == "" || $.trim($("#SoLuongBan").val()) == "" || $.trim($("#date").val()) == "" || $.trim($("#BenhID").val()) == "") {
+                    alert("Vui lòng nhập thông tin chi tiết")
+                    return;
+                }
+
+                var IDThuoc = $("#ID_Thuoc").val(),
+                    DonGia = $("#DonGia").val(),
+                    SoLuongBan = $("#SoLuongBan").val(),
+
+                    detailsTableBody = $("#detailsTable tbody");
+
+                var thuocItem = '<tr><td>' + IDThuoc + '</td><td>' + SoLuongBan + '</td><td>' + DonGia + '</td><td>' + (parseFloat(DonGia) * parseInt(SoLuongBan)) + '</td><td><a data-itemId="0" href="#" class="deleteItem">Remove</a></td></tr>';
+
+                detailsTableBody.append(thuocItem);
+                clearItem();
+            });
+            //After Add A New Order In The List, Clear Clean The Form For Add More Order.
+            function clearItem() {
+                $("#ID_Thuoc").val('');
+                $("#DonGia").val('');
+                $("#SoLuongBan").val('');
+                $("#DonVi").val('');
+
+            }
+            // After Add A New Order In The List, If You Want, You Can Remove It.
+            $(document).on('click', 'a.deleteItem', function (e) {
+                e.preventDefault();
+                var $self = $(this);
+                if ($(this).attr('data-itemId') == "0") {
+                    $(this).parents('tr').css("background-color", "#ff6347").fadeOut(800, function () {
+                        $(this).remove();
+                    });
+                }
+            });
+            //After Click Save Button Pass All Data View To Controller For Save Database
+            function saveOrder(data) {
+                return $.ajax({
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    type: 'POST',
+                    url: "/PhieuKhamBenhs/Save",
+                    data: data,
+                    success: function (result) {
+                        alert(result);
+                        location.reload();
+                    },
+                    error: function () {
+                        alert("Error!")
+                    }
+                });
+            }
+            //Collect Multiple Order List For Pass To Controller
+            $("#saveOrder").click(function (e) {
+
+                e.preventDefault();
+
+                var chitietphieukhamArr = [];
+                chitietphieukhamArr.length = 0;
+
+                $.each($("#detailsTable tbody tr"), function () {
+                    chitietphieukhamArr.push({
+                        ID_Thuoc: $(this).find('td:eq(0)').html(),
+                        SoLuongThuocLay: $(this).find('td:eq(1)').html(),
+                        DonGiaBan: $(this).find('td:eq(2)').html(),
+                        ThanhTien: $(this).find('td:eq(3)').html()
+                    });
+                });
+
+
+                var data = JSON.stringify({
+                    IDPhieu: IDPhieu,
+                    idPhieuTN: $("#idPhieuTN").val(),
+                    date: $("#date").val(),
+                    IDBenh: $("#BenhID").val(),
+                    TrieuChung: $("#TrieuChung").val(),
+                    chitietphieukham: chitietphieukhamArr
+                });
+
+                $.when(saveOrder(data)).then(function (response) {
+                    console.log(response);
+                }).fail(function (err) {
+                    console.log(err);
+                });
+            });
+            $(function () {
+                $("#date").datepicker({ dateFormat: 'mm/dd/yy' });
+            });
+            //Date Format When Using Ajax Get Datetime
+            function ToJavaScriptDate(value) {
+                var pattern = /Date\(([^)]+)\)/;
+                var results = pattern.exec(value);
+                var dt = new Date(parseFloat(results[1]));
+                return (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear();
+            }
+            //Edit
+            var IDPhieu;
+            $("#newOrderModal").on('show.bs.modal', function (event) {
+
+                if (flag == 0) {
+                    var button = $(event.relatedTarget);
+                    IDPhieu = button.data('whatever');
+                    $("#ModalTitle").html("Update Phiếu Sửa Chữa");
+
+                    $.ajax({
+                        type: "GET",
+                        url: '@Url.Action("GetInfoChiTietPhieu","PhieuKhamBenhs")',
+                        dataType: 'json',
+                        data: { IDPhieu: IDPhieu },
+                        success: function (result) {
+                            $("#idPhieuTN option:selected").text(result.TenBenhNhan + " - " + result.IDPhieuTN);
+                            $("#idPhieuTN option:selected").val(result.IDPhieuTN);
+                            $("#ID_Benh option:selected").text(result.TenBenh);
+                            $("#ID_Benh option:selected").val(result.ID_Benh);
+                            $("#date").val(ToJavaScriptDate(result.NgayKham));
+                            $("#TrieuChung").val(result.TrieuChung);
+                            for (var i = 0; i < result.chiTietPhieuKhamBenh.length; i++) {
+                                var Data = '<tr><td>' + result.chiTietPhieuKhamBenh[i].ID_Thuoc + '</td><td>' + result.chiTietPhieuKhamBenh[i].SoLuongThuocLay + '</td><td>' + result.chiTietPhieuKhamBenh[i].DonGiaBan + '</td><td>' + result.chiTietPhieuKhamBenh[i].ThanhTien + '</td><td><a data-itemId="0" href="#" class="deleteItem">Remove</a></td></tr>';
+                                $("#detailsTable tbody").append(Data);
+                            }
+                        }
+                    });
+                }
+            });
+            $('body').on('hidden.bs.modal', '#newOrderModal', function () {
+                location.reload();
+            });
+            function DeleteRecord(IDPhieu) {
+                $("#ID_PhieuKham").val(IDPhieu);
+                $("#DeleteConfirmation").modal("show");
+            }
+            function ConfirmDelete() {
+                var IDPhieu = $("#ID_PhieuKham").val();
+                $.ajax({
+                    type: "POST",
+                    data: { IDPhieu: IDPhieu },
+                    url: "/PhieuKhamBenhs/DeleteConfirmation",
+                    success: function (result) {
+                        $("#DeleteConfirmation").modal("hide");
+                        $(".row_" + IDPhieu).remove();
+                    }
+                })
+            }
+            
+            function Details(IDPhieu) {
+                $("#Details").modal("show");
+                var tongTien = 0;
+                $.ajax({
+                    type: "GET",
+                    data: { IDPhieu: IDPhieu },
+                    url: "/PhieuKhamBenhs/GetDetails",
+                    success: function (result) {
+                        for (var i = 0; i < result.length; i++) {
+                            var Data = '<tr><td>' + result[i].ID_Thuoc + '</td><td>' + result[i].SoLuongThuocLay + '</td><td>' + result[i].DonGiaBan + '</td><td>' + result[i].ThanhTien + '</td></tr>';
+                            $("#details tbody").append(Data);
+                            tongTien += result[i].ThanhTien;
+                        }
+                        document.getElementById("tongTien").innerText = "Tổng tiền: "+tongTien.toString();
+                    }
+                });
+            }
+            $('#Details').on('hide.bs.modal', function () {
+                $("#details tbody tr").remove();
+            })
+            function DetailPhieuThu(IDPhieu) {
+                $("#DetailPhieuThu").modal("show");
+                $.ajax({
+                    type: "GET",
+                    data: { IDPhieu: IDPhieu },
+                    url: "/PhieuKhamBenhs/GetDetailPhieuThu",
+                    success: function (result) {
+                        for (var i = 0; i < result.length; i++) {
+                            var Data = '<tr><td>' + result[i].TenBenhNhan + '</td><td>' + result[i].TienKham + '</td><td>' + result[i].TienThuoc + '</td><td>' + result[i].TongTien + '</td></tr>';
+                            $("#detailsPhieuThu tbody").append(Data);
+                        }
+                        $('#btnXuat').attr('href', '/PhieuThuTiens/XuatPhieuThuTien?IDPhieu=' + IDPhieu);
+                    }
+                });
+            }
+            $('#DetailPhieuThu').on('hide.bs.modal', function () {
+                $("#detailsPhieuThu tbody tr").remove();
+            })
+            $("#txtSearch").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: '@Url.Action("GetSearchValue","PhieuSuaChuas")',
+                        dataType: "json",
+                        data: { search: $("#txtSearch").val() },
+                        success: function (data) {
+                            response($.map(data, function (item) {
+                                return { label: item.TenChuXe, value: item.TenChuXe };
+                            }));
+                        },
+                        error: function (xhr, status, error) {
+                            alert("Error");
+                        }
+                    });
+                }
+            });
+            $('#txtSearch').on('keypress', function (event) {
+                var regex = new RegExp("^[a-zA-Z0-9]+$");
+                var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+                if (!regex.test(key)) {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+    </script>
+}
