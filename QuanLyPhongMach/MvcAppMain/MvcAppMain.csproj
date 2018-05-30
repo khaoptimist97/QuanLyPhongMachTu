@@ -192,8 +192,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BUS\UserBusinessLayer.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\BackupController.cs" />
     <Compile Include="Controllers\BaoCaoController.cs" />
     <Compile Include="Controllers\BenhsController.cs" />
+    <Compile Include="Controllers\BK_CT_PhieuKhamBenhController.cs" />
+    <Compile Include="Controllers\BK_HoaDonController.cs" />
+    <Compile Include="Controllers\BK_PhieuKhamBenhController.cs" />
     <Compile Include="Controllers\CachDungsController.cs" />
     <Compile Include="Controllers\DonVisController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -243,6 +247,10 @@
     <Compile Include="Migrations\201805271415443_NotAlowedNullGender.cs" />
     <Compile Include="Migrations\201805271415443_NotAlowedNullGender.Designer.cs">
       <DependentUpon>201805271415443_NotAlowedNullGender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805281345341_UpdateBKTables.cs" />
+    <Compile Include="Migrations\201805281345341_UpdateBKTables.Designer.cs">
+      <DependentUpon>201805281345341_UpdateBKTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Benh.cs" />
@@ -305,6 +313,8 @@
     <Content Include="Content\bootswatch.css" />
     <Content Include="Content\CSSforPageAdmin.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Image\Affirmative.png" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\themes\base\images\black-clinic-512.jpg" />
     <Content Include="Content\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="Content\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
@@ -1059,6 +1069,7 @@
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\faker.js" />
     <Content Include="Scripts\faker.min.js" />
+    <Content Include="Scripts\index.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
     <Content Include="Scripts\jquery-1.12.4.min.map" />
@@ -1164,6 +1175,10 @@
     <Content Include="Views\BaoCao\ReportDoanhSo.cshtml" />
     <Content Include="Views\BaoCao\Report.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Backup\Backup.cshtml" />
+    <Content Include="Views\BK_CT_PhieuKhamBenh\Index.cshtml" />
+    <Content Include="Views\BK_PhieuKhamBenh\Index.cshtml" />
+    <Content Include="Views\BK_HoaDon\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1208,6 +1223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805271415443_NotAlowedNullGender.resx">
       <DependentUpon>201805271415443_NotAlowedNullGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805281345341_UpdateBKTables.resx">
+      <DependentUpon>201805281345341_UpdateBKTables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\CRBaoCaoDoanhThu.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

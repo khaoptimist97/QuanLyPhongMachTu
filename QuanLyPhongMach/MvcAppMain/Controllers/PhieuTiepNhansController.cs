@@ -182,7 +182,7 @@ namespace MvcAppMain.Controllers
             PhieuTiepNhan phieuTiep = db.PhieuTiepNhans.Find(IDPhieu);
             if (phieuTiep != null)
             {
-                phieuTiep.Deleted = true;
+                db.PhieuTiepNhans.Remove(phieuTiep);
                 db.SaveChanges();
                 result = true;
             }

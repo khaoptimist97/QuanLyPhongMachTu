@@ -925,7 +925,7 @@ FROM   CT_PhieuKhamBenh AS ct INNER JOIN
              PhieuKhamBenh AS pk ON ct.ID_PhieuKham = pk.ID_PhieuKham INNER JOIN
              PhieuTiepNhan AS ptn ON pk.IDPhieuTN = ptn.IDPhieuTN INNER JOIN
              HoSoBenhNhan AS hs ON ptn.ID_BenhNhan = hs.ID_BenhNhan
-WHERE (ct.ID_PhieuKham = @IDPhieu)";
+WHERE (ct.ID_PhieuKham = @IDPhieu) AND (ct.Deleted = 0)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDPhieu", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_PhieuKham", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

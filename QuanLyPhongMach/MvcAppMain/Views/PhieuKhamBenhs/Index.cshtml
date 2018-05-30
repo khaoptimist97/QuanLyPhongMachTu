@@ -73,7 +73,14 @@
                             <input class="btn btn-primary my-2 my-sm-0" type="submit" value="Tìm Kiếm" />
                         </div>
 
-                    }                   
+                    }
+                    @if (Convert.ToBoolean(Session["IsAdmin"]) == true)
+                    {
+                        @*<a href="@Url.Action("Backup", "Backup")" style="margin-right:10px" class="btn btn-success pull-right">Tạo Backup</a>*@
+                        <a class="btn btn-success pull-right" data-toggle="modal" data-target="#backupModal">
+                            <i class="fa fa-fw fa-address-card"></i>Tạo Backup
+                        </a>
+                    }
                     <div class="modal fade" id="backupModal" tabindex="-1" role="dialog" aria-labelledby="backupModal" aria-hidden="true" style="color:black;font-size:16px">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -85,7 +92,7 @@
                                 </div>
                                 <div class="modal-body">Backup được thực hiện vào mỗi cuối tháng, bạn có chắc muốn backup dữ liệu không?</div>
                                 <div class="modal-footer">
-                                    @using (Html.BeginForm("Backup", "Backup", FormMethod.Post))
+                                    @using (Html.BeginForm("DoBackup", "Backup", FormMethod.Post))
                                     {
                                         <button class="btn btn-primary" type="submit">Confirm</button>
                                     }
@@ -103,6 +110,7 @@
                                     <div>
                                         <table class="table  table-bordered" id="myTable">
                                             <tr>
+                                                
                                                 <th>
                                                     <strong>
                                                         Tên bệnh nhân
@@ -131,6 +139,7 @@
                                                 {
                                                     <tr class="row_@item.ID_PhieuKham">
                                                         @Html.HiddenFor(m => item.ID_PhieuKham, new { @id = "ID_PhieuKham" })
+                                                       
                                                         <td>
                                                             @Html.DisplayFor(modelItem => item.PhieuTiepNhan.HoSoBenhNhan.HoTen)
                                                         </td>
@@ -214,6 +223,7 @@
                                     <div class="col-md-4">
                                         @*<input type="text" id="name" name="name" placeholder="Customer Name" class="form-control" />*@
                                         @Html.DropDownList("ID_Benh", (SelectList)ViewBag.ID_Benh, new { @class = "form-control", id = "BenhID" })
+                                        <a class="btn btn-default" href="#" style="width:90px;margin-top:5px" onclick="AddLoaiBenh()">Add new</a>
                                     </div>
                                     <label class="control-label col-md-2">
                                         Triệu chứng
@@ -240,7 +250,7 @@
                                         Đơn giá
                                     </label>
                                     <div class="col-md-4">
-                                        <input type="number" id="DonGia" name="DonGia" placeholder="Giá thuốc" class="form-control" />
+                                        <input type="number" id="DonGia" name="DonGia" placeholder="Giá thuốc" class="form-control" disabled="disabled" />
                                     </div>
                                 </div>
 
@@ -362,13 +372,47 @@
                             </thead>
                             <tbody></tbody>
                         </table>
-                        
+
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="reset" class="btn btn-primary" data-dismiss="modal">Close</button>
-                    <a class="btn btn-danger" href="#" id="btnXuat">Xuất</a>                
+                    <a class="btn btn-danger" href="#" id="btnXuat">Xuất</a>
                 </div>
+            </div>
+        </div>
+    </div>
+    @* Modal for Add new LoaiBenh *@
+    <div class="modal fade" id="AddLBModal" style="color:black" tabindex="-1">
+        <div class="modal-dialog modal-lg" style=" width: 900px !important;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">&times;</a>
+                    <h4 id="ModalTitle" style="color:red">Thêm loại bệnh mới </h4>
+                </div>
+
+                <div class="modal-body">
+                    <form id="NewOrderForm">
+                        <fieldset id="SubmitForm">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">
+                                        Tên bệnh:
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input type="text" id="TenBenh" name="name" placeholder="Tên loại bệnh" class="form-control" />
+                                    </div>
+                                </div>                             
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <a id="saveBN" class="btn btn-danger" onclick="ConfirmSaveLB()">Save</a>
+                </div>
+
             </div>
         </div>
     </div>
@@ -380,12 +424,30 @@
     <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
     <script>
                     //Để phân biệt lúc Add và Edit , 1:Add, 0:Edit
-            var flag = 0;
+        var flag = 0;
             //Show Modal.
-            function addNewOrder() {
+        function addNewOrder() {
                 flag = 1;
                 $("#newOrderModal").modal();
-            }
+        }
+        function AddLoaiBenh() {
+            $("#AddLBModal").modal('show');
+        }
+        function ConfirmSaveLB() {
+            var TenBenh = $("#TenBenh").val();    
+            $.ajax({
+                type: "GET",
+                data: {
+                    TenBenh: TenBenh 
+                },
+                url: "/PhieuKhamBenhs/ConfirmThemLoaiBenh",
+                success: function (result) {
+                    $('#BenhID option:selected').text(TenBenh);
+                    $('#BenhID option:selected').val(result);
+                    $("#AddLBModal").modal('hide');
+                }
+            })
+        }
             //Auto hiển thị giá tiền tương ứng của loại phụ tùng
         $("#ID_Thuoc").change(function () {
 
@@ -548,7 +610,7 @@
                     }
                 })
             }
-            
+
             function Details(IDPhieu) {
                 $("#Details").modal("show");
                 var tongTien = 0;

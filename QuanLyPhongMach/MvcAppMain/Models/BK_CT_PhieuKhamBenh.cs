@@ -18,9 +18,9 @@ namespace MvcAppMain.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID_Thuoc { get; set; }
 
-        public int ID_CachDung { get; set; }
-
-        public int? SoLuongThuocLay { get; set; }
+        public int SoLuongThuocLay { get; set; }
+        public int DonGiaBan { get; set; }
+        public int ThanhTien { get; set; }
 
     }
 }

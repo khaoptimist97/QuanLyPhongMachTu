@@ -87,6 +87,9 @@
                                     <table class="table  table-bordered ">
                                         <tr>
                                             <th>
+                                                <Center>ID Bệnh nhân</Center>
+                                            </th>
+                                            <th>
                                                 <Center>Họ tên</Center>
                                             </th>
                                             <th>
@@ -97,7 +100,7 @@
                                             </th>
                                             <th>
                                                 <Center>Địa Chỉ</Center>
-                                            </th>                                       
+                                            </th>
                                             <th></th>
                                         </tr>
                                         @if (Model.Count() == 0)
@@ -115,6 +118,9 @@
                                                 
                                                 <tr class="row_@item.ID_BenhNhan">
                                                     @Html.HiddenFor(m => item.ID_BenhNhan, new { @id = "BenhNhanID" })
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.ID_BenhNhan)
+                                                    </td>
                                                     <td>
                                                         @Html.DisplayFor(modelItem => item.HoTen)
                                                     </td>

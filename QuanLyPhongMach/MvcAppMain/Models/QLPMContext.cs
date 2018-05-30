@@ -38,12 +38,6 @@ namespace MvcAppMain.Models
                 .WithRequired(e => e.Benh)
                 .WillCascadeOnDelete(false);
 
-            
-
-            modelBuilder.Entity<BK_HoaDon>()
-                .Property(e => e.GhiChu)
-                .IsUnicode(false);
-
             modelBuilder.Entity<BK_PhieuKhamBenh>()
                 .Property(e => e.TrieuChung)
                 .IsUnicode(false);

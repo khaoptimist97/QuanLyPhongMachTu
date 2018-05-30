@@ -12,7 +12,7 @@ namespace MvcAppMain.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID_PhieuKham { get; set; }
 
-        public int ID_BenhNhan { get; set; }
+        public int IDPhieuTN { get; set; }
 
         public int ID_Benh { get; set; }
 

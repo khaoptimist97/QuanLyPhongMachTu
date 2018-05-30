@@ -59,6 +59,19 @@ namespace MvcAppMain.Controllers
             }
             return View(phieuKhamBenh.Where(x => x.Deleted == false).ToList().ToPagedList(page ?? 1, 10));
         }
+        public JsonResult ConfirmThemLoaiBenh(string TenBenh)
+        {
+            int newIDLoaiBenh = 0;
+            if (TenBenh != null)
+            {
+                Benh benh = new Benh();
+                benh.TenBenh = TenBenh;
+                db.Benhs.Add(benh);
+                db.SaveChanges();
+                newIDLoaiBenh = benh.ID_Benh;
+            }
+            return Json(newIDLoaiBenh, JsonRequestBehavior.AllowGet);
+        }
         public JsonResult GetSearchValue(string search)
         {
             List<BenhNhan> allsearch = db.PhieuKhamBenhs.Where(s => s.PhieuTiepNhan.HoSoBenhNhan.HoTen.Contains(search)).Select(x => new BenhNhan

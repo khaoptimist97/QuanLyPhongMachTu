@@ -78,6 +78,9 @@
                                         <table class="table  table-bordered ">
                                             <tr>
                                                 <th>
+                                                    <Center>ID phiếu</Center>
+                                                </th>
+                                                <th>
                                                     <Center>Tên Bệnh nhân</Center>
                                                 </th>
                                                 <th>
@@ -97,6 +100,9 @@
                                                 {
                                                     <tr class="row_@item.IDPhieuTN">
                                                         @Html.HiddenFor(m => item.IDPhieuTN, new { @id = "PhieuID" })
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.IDPhieuTN)
+                                                        </td>
                                                         <td>
                                                             @Html.DisplayFor(modelItem => item.HoSoBenhNhan.HoTen)
                                                         </td>
@@ -182,11 +188,15 @@
         var IDPhieu = $("#PhieuID").val();
         $.ajax({
             type: "POST",
+            dataType: "json",
             data: { IDPhieu: IDPhieu },
             url: "/PhieuTiepNhans/DeleteConfirmation",
             success: function (result) {
                 $("#DeleteConfirmation").modal("hide");
                 $(".row_" + IDPhieu).remove();
+            },
+            error: function () {
+                alert("Phiếu này đã được lập phiếu khám!")
             }
         })
     }

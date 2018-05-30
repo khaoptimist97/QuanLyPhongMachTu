@@ -33,7 +33,6 @@
                             <TextRun>
                               <Value>Tên thuốc</Value>
                               <Style>
-                                <FontStyle>Italic</FontStyle>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -66,7 +65,6 @@
                             <TextRun>
                               <Value>So Luong Thuoc Lay</Value>
                               <Style>
-                                <FontStyle>Italic</FontStyle>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -99,7 +97,6 @@
                             <TextRun>
                               <Value>Don Gia Ban</Value>
                               <Style>
-                                <FontStyle>Italic</FontStyle>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -132,7 +129,6 @@
                             <TextRun>
                               <Value>Thanh Tien</Value>
                               <Style>
-                                <FontStyle>Italic</FontStyle>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -528,8 +524,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.42897cm</Top>
-          <Left>1.29328cm</Left>
+          <Top>2.02848cm</Top>
+          <Left>1.36384cm</Left>
           <Height>1.00569cm</Height>
           <Width>7.03319cm</Width>
           <Style>

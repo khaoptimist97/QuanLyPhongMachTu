@@ -801,3 +801,4 @@ C:\Users\Minh Kha\Desktop\C#Project\QuanLyPhongMach\MvcAppMain\obj\Debug\MvcAppM
 C:\Users\Minh Kha\Desktop\C#Project\QuanLyPhongMach\MvcAppMain\obj\Debug\MvcAppMain.dll
 C:\Users\Minh Kha\Desktop\C#Project\QuanLyPhongMach\MvcAppMain\obj\Debug\MvcAppMain.pdb
 C:\Users\Minh Kha\Desktop\C#Project\QuanLyPhongMach\MvcAppMain\obj\Debug\MvcAppMain.Migrations.NotAlowedNullGender.resources
+C:\Users\Minh Kha\Desktop\C#Project\QuanLyPhongMach\MvcAppMain\obj\Debug\MvcAppMain.Migrations.UpdateBKTables.resources

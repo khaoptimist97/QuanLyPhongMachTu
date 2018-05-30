@@ -1,114 +1,50 @@
 ﻿
-
-@{
-    Layout = null;
-}
-<link href="~/Content/bootstrap.css" rel="stylesheet" />
-<link href="~/Content/Site.css" rel="stylesheet" />
-@Scripts.Render("~/bundles/modernizr")
-@Scripts.Render("~/bundles/jquery")
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Đăng nhập - Quản lý Gara Oto</title>
+    <meta charset="UTF-8">
+    <title>Login/Logout animation concept</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 
-    <!-- Custom fonts for this template-->
-    <link href="../../lib/table-admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 
-    <!-- Custom styles for this template-->
-    <link href="../../lib/table-admin/css/sb-admin.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet" />
+
+
 </head>
-<style>
-    * {
-        color: white;
-    }
-
-    body {
-        margin: 0;
-        padding: 0;
-        background: url("/Content/Image/BG-Login.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        font-family: sans-serif
-    }
-
-    .panel {
-        border: 1px solid #ffffff;
-        background: rgba(0,0,0,0.5);
-        padding: 30px 40px;
-        margin-top: 20vh;
-        box-shadow: 0px 3px 20px 6px rgba(0,0,0,0.75);
-    }
-
-
-    h3 {
-        margin: 0;
-        padding: 0;
-        color: #e1de4e;
-    }
-</style>
-
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+    <div class="cont">
+        <div class="demo">
 
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="panel panel-default">
-                    <center>
-                        <h1>Đăng Nhập</h1>
-                    </center>
-                    <div class="panel-body">
-                        @Html.ValidationMessage("CredentialError", new { style = "color:red" })
-                        <br />
-                        @using (Html.BeginForm("DoLogin", "Authentication", FormMethod.Post))
-                        {
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Tài Khoản:</label>
-                                <input class="form-control" id="UserName" type="text" aria-describedby="usernameHelp" placeholder="Tên Tài Khoản" name="UserName">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Mật Khẩu:</label>
-                                <input class="form-control" id="MyPassword" type="password" placeholder="Mật Khẩu" name="Password">
-
-                            </div>
-                            <div class="form-group">
-
-                                <div class="form-check">
-
-                                    <label class="form-check-label">
-
-                                        <input type="checkbox" onclick="myFunction()">Hiển thị mật khẩu
-                                    </label>
-                                </div>
-                                <div class="form-check">
-
-                                    <label class="form-check-label">
-
-                                        <input class="form-check-input" type="checkbox"> Nhớ mật khẩu
-                                    </label>
-                                </div>
-                            </div>
-                            <input class="btn btn-success btn-block" type="submit" value="Đăng Nhập" />
-                        }
-
+            <div class="login">
+                <div class="login__check"></div>
+                @*<div class="login__form">*@
+                @using (Html.BeginForm("DoLogin", "Authentication", FormMethod.Post, new { @class = "login__form" }))
+                {
+                    @Html.ValidationMessage("CredentialError", new { style = "color:red;font-size:18px;" })
+                    <br />
+                    <div class="login__row">
+                        <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+                            <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+                        </svg>
+                        <input type="text" class="login__input name" placeholder="Username" name="UserName" />
                     </div>
-                </div>
+                    <div class="login__row">
+                        <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
+                            <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
+                        </svg>
+                        <input type="password" class="login__input pass" placeholder="Password" name="Password" />
+                    </div>
+                    <button type="submit" class="login__submit">Sign in</button>
+                    <p class="login__signup">Don't have an account? &nbsp;<a>Sign up</a></p>
+                }
+                @*</div>*@
             </div>
         </div>
+    </div>
+
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+    <script src="~/Scripts/index.js"></script>
+
+
 </body>
-<script>
-    function myFunction() {
-        var x = document.getElementById("MyPassword");
-        if (x.type === "password") {
-            x.type = "text";
-        } else {
-            x.type = "password";
-        }
-    }
-</script>
